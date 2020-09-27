@@ -25,6 +25,7 @@ export default {
         { type: "hero" },
         { type: "lover" },
         { type: "magician" },
+        { type: "outlaw" },
       ],
     },
   ],
