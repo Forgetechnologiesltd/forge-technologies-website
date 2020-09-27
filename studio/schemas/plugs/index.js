@@ -1,5 +1,6 @@
 export { default as hero } from "./hero";
 export { default as lover } from "./lover";
+export { default as magician } from "./magician";
 export { default as infoRows } from "./infoRows";
 export { default as textWithIllustration } from "./textWithIllustration";
 export { default as illustration } from "./illustration";

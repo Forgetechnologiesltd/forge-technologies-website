@@ -24,6 +24,7 @@ export default {
       of: [
         { type: "hero" },
         { type: "lover" },
+        { type: "magician" },
       ],
     },
   ],
