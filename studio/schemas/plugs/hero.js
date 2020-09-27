@@ -1,40 +1,43 @@
 export default {
-  type: 'object',
-  name: 'hero',
-  title: 'Hero',
+  type: "object",
+  name: "hero",
+  title: "The Hero",
   fields: [
     {
-      name: 'label',
-      type: 'string'
+      name: "heading",
+      type: "string",
+      title: "Heading",
     },
     {
-      name: 'heading',
-      type: 'string',
-      title: 'Heading'
+      name: "tagline",
+      type: "simpleBlockContent",
+      title: "Tagline",
     },
     {
-      name: 'tagline',
-      type: 'simpleBlockContent'
+      name: "backgroundImage",
+      type: "image",
+      title: "Background image",
+      options: {
+        hotspot: true,
+      },
     },
     {
-      name: 'illustration',
-      type: 'illustration'
+      name: "cta",
+      type: "cta",
+      title: "Call to action",
     },
-    {
-      name: 'cta',
-      type: 'cta'
-    }
   ],
   preview: {
     select: {
-      title: 'heading',
-      subtitle: 'label',
-      disabled: 'disabled'
+      title: "heading",
+      media: "backgroundImage",
     },
-    prepare({ title, disabled }) {
+    prepare({ title, media }) {
       return {
-        title: `Hero: ${disabled ? 'DISABLED' : title}`
-      }
-    }
-  }
-}
+        title,
+        subtitle: "The Hero editing block type",
+        media,
+      };
+    },
+  },
+};
