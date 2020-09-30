@@ -26,6 +26,7 @@ export default {
         { type: "lover" },
         { type: "magician" },
         { type: "outlaw" },
+        { type: "sage" },
       ],
     },
   ],
