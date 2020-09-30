@@ -5,6 +5,7 @@ export { default as outlaw } from "./outlaw";
 export { default as outlawItem } from "./outlawItem";
 export { default as icon } from "./icon";
 export { default as sage } from "./sage";
+export { default as ruler } from "./ruler";
 export { default as infoRows } from "./infoRows";
 export { default as textWithIllustration } from "./textWithIllustration";
 export { default as illustration } from "./illustration";
