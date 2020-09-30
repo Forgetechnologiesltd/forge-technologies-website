@@ -28,6 +28,7 @@ export default {
         { type: "outlaw" },
         { type: "sage" },
         { type: "ruler" },
+        { type: "explorer" },
       ],
     },
   ],
