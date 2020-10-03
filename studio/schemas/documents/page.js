@@ -30,7 +30,7 @@ export default {
         { type: "ruler" },
         { type: "explorer" },
         { type: "innocent" },
-        // { type: "creator" },
+        { type: "creator" },
         // { type: "caregiver" },
         // { type: "jester" },
         // { type: "everyman" },
