@@ -9,12 +9,18 @@ export default {
       title: "Title",
     },
     {
-      name: "navMenu",
-      type: "reference",
-      title: "Navigation menu",
-      // weak: true, // Uncomment if you want to be able to delete navigation even though pages refer to it
-      to: [{ type: "navigationMenu" }],
-      description: "Which nav menu should be shown, if any",
+      title: "Slug",
+      name: "slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 200, // will be ignored if slugify is set
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .slice(0, 200),
+      },
     },
     {
       name: "content",
