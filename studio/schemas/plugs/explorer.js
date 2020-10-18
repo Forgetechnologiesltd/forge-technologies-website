@@ -14,7 +14,7 @@ export default {
   ],
   preview: {
     select: {
-      title: "heading",
+      title: "title",
     },
     prepare({ title }) {
       return {
