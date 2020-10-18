@@ -1,16 +1,27 @@
 {
-  "name": "forge-technologies",
+  "name": "forge-technologies-website",
+  "version": "1.0.0",
   "private": true,
+  "author": "Rafa García Lepper",
+  "description": "Forge Technologies website's front end",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
   "dependencies": {
-    "@gridsome/plugin-google-analytics": "^0.1.0",
+    "@nuxtjs/sanity": "^0.3.3",
+    "@sanity/client": "^1.150.7",
     "@sanity/image-url": "^0.140.19",
-    "dotenv": "^8.1.0",
-    "gridsome": "^0.7.1",
-    "gridsome-source-sanity": "^1.0.1",
-    "sanity-blocks-vue-component": "^0.1.0"
+    "consola": "^2.15.0",
+    "core-js": "^3.6.5",
+    "nuxt": "^2.14.5"
   },
   "devDependencies": {
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.0"
+    "@nuxtjs/vuetify": "^1.11.2",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.1"
   }
 }

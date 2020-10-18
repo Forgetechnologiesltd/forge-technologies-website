@@ -1,12 +1,20 @@
-# Gridsome Blog Starter
+# web
 
-> A simple, hackable & minimalistic starter for Gridsome that uses Sanity for content.
+## Build Setup
 
-## Features
+```bash
+# install dependencies
+$ npm install
 
-- Beautiful and simple design.
-- Structured content from [Sanity.io](https://www.sanity.io)
-- Tags support.
-- Dark / Light toggle.
-- CSS variables, SCSS & BEM for styling.
-- 100, 100, 100, 100 score on Google Lighthouse.
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
