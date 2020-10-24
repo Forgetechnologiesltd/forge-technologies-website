@@ -2,13 +2,13 @@ export default {
   title: "Call to action",
   name: "submenuItem",
   type: "object",
-  fieldsets: [
-    {
-      title: "Link",
-      name: "link",
-      description: "Only the first value of these will be used",
-    },
-  ],
+  // fieldsets: [
+  //   {
+  //     title: "Link",
+  //     name: "link",
+  //     description: "Only the first value of these will be used",
+  //   },
+  // ],
   fields: [
     {
       title: "Title",
@@ -19,7 +19,7 @@ export default {
       title: "Landing page",
       name: "landingPageRoute",
       type: "reference",
-      fieldset: "link",
+      // fieldset: "link",
       to: [{ type: "route" }],
     },
     // {
@@ -41,20 +41,9 @@ export default {
     select: {
       title: "title",
       landingPage: "landingPageRoute.slug.current",
-      route: "route",
-      link: "link",
     },
-    prepare({ title, landingPage, route, link }) {
-      let subtitle = "Not set";
-      if (landingPage) {
-        subtitle = `Route: /${landingPage}`;
-      }
-      if (route) {
-        subtitle = `Route: ${route}`;
-      }
-      if (link) {
-        subtitle = `External: ${link}`;
-      }
+    prepare({ title, landingPage }) {
+      let subtitle = `Route: /${landingPage}`;
       return {
         title,
         subtitle,
