@@ -13,6 +13,7 @@ import post from "./documents/post";
 import page from "./documents/page";
 import siteSettings from "./documents/siteSettings";
 import route from "./documents/route";
+import footerMenu from "./documents/footerMenu";
 
 import experiment from "./objects/experiment";
 import simpleBlockContent from "./objects/simpleBlockContent";
@@ -57,6 +58,7 @@ export default createSchema({
       cta,
       menuItem,
       submenuItem,
+      footerMenu,
       siteSettings,
       post,
       navMenu,
