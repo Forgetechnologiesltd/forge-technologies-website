@@ -23,6 +23,7 @@ import plugDefaultFields from "./plugs/_plugDefaultFields";
 // Object types
 import { instagram, videoEmbed } from "./objects/embeds";
 import cta from "./objects/cta";
+import menuItem from "./objects/menuItem";
 import bodyPortableText from "./objects/bodyPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
 import mainImage from "./objects/mainImage";
@@ -33,6 +34,7 @@ import teamMember from "./objects/teamMember";
 import variation from "./objects/variation";
 import openGraph from "./objects/openGraph";
 import latex from "./latex";
+import submenuItem from "./objects/submenuItem";
 
 const allPlugs = Object.values(plugs).map((plug) => {
   return { ...plug, fields: plugDefaultFields.concat(plug.fields) };
@@ -53,6 +55,8 @@ export default createSchema({
       link,
       simpleBlockContent,
       cta,
+      menuItem,
+      submenuItem,
       siteSettings,
       post,
       navMenu,

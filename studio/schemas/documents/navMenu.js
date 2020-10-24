@@ -1,15 +1,15 @@
 export default {
-  type: 'document',
-  name: 'navigationMenu',
+  type: "document",
+  name: "navigationMenu",
   fields: [
     {
-      type: 'string',
-      name: 'title'
+      type: "string",
+      name: "title",
     },
     {
-      type: 'array',
-      name: 'items',
-      of: [{ type: 'cta' }]
-    }
-  ]
-}
+      type: "array",
+      name: "items",
+      of: [{ type: "menuItem" }],
+    },
+  ],
+};
