@@ -36,6 +36,8 @@ import variation from "./objects/variation";
 import openGraph from "./objects/openGraph";
 import latex from "./latex";
 import submenuItem from "./objects/submenuItem";
+import everyman from "./objects/everyman";
+import tabbableContent from "./objects/tabbableContent";
 
 const allPlugs = Object.values(plugs).map((plug) => {
   return { ...plug, fields: plugDefaultFields.concat(plug.fields) };
@@ -58,6 +60,8 @@ export default createSchema({
       cta,
       menuItem,
       submenuItem,
+      everyman,
+      tabbableContent,
       footerMenu,
       siteSettings,
       post,
