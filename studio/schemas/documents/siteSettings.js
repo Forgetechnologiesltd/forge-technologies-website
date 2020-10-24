@@ -18,13 +18,21 @@ export default {
       description: "Which nav menu should be shown, if any",
     },
     {
-      name: "footerMenu",
-      type: "reference",
-      title: "Footer menu",
-      // weak: true, // Uncomment if you want to be able to delete navigation even though pages refer to it
-      to: [{ type: "navigationMenu" }],
+      title: "Footer menus",
+      name: "footerNav",
+      type: "array",
       description: "Links for the footer",
+      of: [
+        {
+          name: "footerNavItem",
+          type: "reference",
+          title: "Footer menu",
+          // weak: true, // Uncomment if you want to be able to delete navigation even though pages refer to it
+          to: [{ type: "footerMenu" }],
+        },
+      ],
     },
+
     {
       title: "Open graph",
       name: "openGraph",
