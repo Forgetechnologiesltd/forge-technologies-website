@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="pb-0">
     <v-app-bar flat app color="white" height="100">
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.smAndDown"
@@ -52,7 +52,6 @@
     <v-navigation-drawer
       v-if="$vuetify.breakpoint.smAndDown"
       v-model="drawer"
-      :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
       app
@@ -90,8 +89,47 @@
       </v-container>
     </v-main>
 
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer padless class="mt-10">
+      <v-card class="flex" flat tile>
+        <v-card-title class="light-blue darken-4">
+          <v-container>
+            <v-row>
+              <v-col cols="3">
+                <NuxtLink to="/" class="d-block">
+                  <v-img
+                    contain
+                    src="/forge-logo-inline-white.svg"
+                    max-width="200"
+                  ></v-img>
+                </NuxtLink>
+              </v-col>
+              <v-col v-for="menu in footerMenus" :key="menu._id" cols="2">
+                <v-list dense class="light-blue darken-4 white--text pt-0">
+                  <v-subheader
+                    class="pt-0 white--text text-uppercase text-body-1"
+                    >{{ menu.title }}</v-subheader
+                  >
+                  <v-list-item
+                    v-for="(item, i) in menu.items"
+                    :key="i"
+                    :to="item.slug"
+                    router
+                    exact
+                    active-class="active"
+                    class="white--text text-body-2"
+                  >
+                    <span class="white--text">{{ item.title }}</span>
+                  </v-list-item>
+                </v-list>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-title>
+
+        <v-card-text class="py-1 white--text light-blue darken-1">
+          <span>&copy; Forge Technologies {{ new Date().getFullYear() }}</span>
+        </v-card-text>
+      </v-card>
     </v-footer>
   </v-app>
 </template>
@@ -107,23 +145,31 @@ const query = groq`*[_type == "navigationMenu"][0].items {
       "slug": landingPageRoute->slug.current
     }
 }`
+const footerMenusQuery = groq`*[_type == "footerMenu"] {
+  _id,
+  title,
+  items[] {
+    title,
+    "slug": landingPageRoute->slug.current,
+  }
+}`
 
 export default {
   async fetch() {
     const items = await this.$sanity.fetch(query)
+    const footerMenus = await this.$sanity.fetch(footerMenusQuery)
     this.items = items
+    this.footerMenus = footerMenus
   },
 
   data() {
     return {
       clipped: false,
+      fixedFooter: false,
+      absolute: false,
       drawer: false,
-      fixed: true,
       items: [],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
+      footerMenus: [],
     }
   },
 }
@@ -131,5 +177,17 @@ export default {
 <style lang="scss" scoped>
 .theme--light.v-application {
   color: #37474f;
+}
+.theme--light.active.v-list-item--active {
+  background-color: transparent;
+
+  &:before {
+    background-color: transparent;
+    opacity: 0;
+    &:hover {
+      background-color: transparent;
+      opacity: 0;
+    }
+  }
 }
 </style>
