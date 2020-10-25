@@ -66,10 +66,11 @@ export default {
     theme: {
       themes: {
         light: {
-          primary: '#3f51b5',
-          secondary: '#b0bec5',
-          accent: '#8c9eff',
+          primary: colors.lightBlue.darken1,
+          secondary: colors.lightBlue.darken2,
+          accent: colors.lightBlue.darken4,
           error: '#b71c1c',
+          text: '#37474f',
           // primary: colors.blue.darken2,
           // accent: colors.grey.darken3,
           // secondary: colors.amber.darken3,

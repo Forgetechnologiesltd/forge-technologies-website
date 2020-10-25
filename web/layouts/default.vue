@@ -128,3 +128,8 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.theme--light.v-application {
+  color: #37474f;
+}
+</style>
