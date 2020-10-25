@@ -1,4 +1,26 @@
-// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
-//
-// The variables you want to modify
-// $font-size-root: 20px;
+// // Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+// //
+
+$headings: (
+  'h1': (
+    'size': 96px,
+    'weight': 300,
+    'line-height': 96px,
+    'letter-spacing': -0.015625em,
+    'text-transform': false,
+  ),
+  'h2': (
+    'size': 60px,
+    'weight': 300,
+    'line-height': 60px,
+    'letter-spacing': -0.0083333333em,
+    'text-transform': false,
+  ),
+  'h3': (
+    'size': 48px,
+    'weight': 400,
+    'line-height': 3.125rem,
+    'letter-spacing': normal,
+    'text-transform': false,
+  ),
+);
