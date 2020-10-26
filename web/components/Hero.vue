@@ -1,17 +1,43 @@
 <template>
-  <v-row>
-    <v-col class="mx-0 px-0">
-      <v-container>
-        <h1>{{ heading }}</h1>
-        <SanityContent :blocks="tagline" />
-      </v-container>
-      <SanityImage
-        v-if="backgroundImage"
-        :asset-id="backgroundImage.asset._ref"
-        auto="format"
-      />
-    </v-col>
-  </v-row>
+  <section class="hero">
+    <v-container fluid class="pa-0" no-gutters>
+      <v-row no-gutters>
+        <v-col class="mx-0 px-0">
+          <v-img
+            :min-height="'calc(60vh)'"
+            :max-height="'calc(60vh)'"
+            :src="$imageHelper(backgroundImage).url()"
+            gradient="rgba(0,0,0,.33), rgba(0,0,0,.7)"
+          >
+            <v-theme-provider dark>
+              <v-container fill-height>
+                <v-row
+                  align="center"
+                  class="white--text mx-auto"
+                  justify="center"
+                >
+                  <v-col class="white--text text-center" cols="3">
+                    <h2
+                      :class="[
+                        $vuetify.breakpoint.smAndDown
+                          ? 'display-1'
+                          : 'display-2',
+                      ]"
+                      class="font-weight-light mb-6"
+                    >
+                      {{ heading }}
+                    </h2>
+
+                    <SanityContent :blocks="tagline" />
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-theme-provider>
+          </v-img>
+        </v-col>
+      </v-row>
+    </v-container>
+  </section>
 </template>
 
 <script>
@@ -27,6 +53,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.hero {
+  background-color: #37474f;
+}
 img {
   min-width: 100%;
   max-width: 100%;

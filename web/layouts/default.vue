@@ -1,7 +1,8 @@
 <template>
   <v-app class="pb-0">
-    <v-app-bar flat app color="white" height="100">
+    <v-app-bar flat app color="transparent" height="100">
       <v-app-bar-nav-icon
+        dark
         v-if="$vuetify.breakpoint.smAndDown"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
@@ -10,7 +11,7 @@
           <v-col cols="2">
             <v-avatar class="mr-3" size="200">
               <NuxtLink to="/"
-                ><v-img contain src="/forge-logo-inline.svg"></v-img
+                ><v-img contain src="/forge-logo-inline-white.svg"></v-img
               ></NuxtLink>
             </v-avatar>
           </v-col>
@@ -19,8 +20,9 @@
               v-if="$vuetify.breakpoint.mdAndUp"
               right
               class="mt-16"
-              color="grey darken-1"
-              hide-slider
+              color="white"
+              dark
+              background-color="transparent"
             >
               <v-tab v-for="(item, i) in items" :key="i" nuxt :to="item.slug">
                 {{ !item.submenu ? item.title : '' }}
@@ -30,7 +32,12 @@
                       {{ item.title }}
                     </v-btn>
                   </template>
-                  <v-list v-if="item.submenu && item.submenu.length">
+                  <v-list
+                    dark
+                    color="transparent"
+                    elevation="0"
+                    v-if="item.submenu && item.submenu.length"
+                  >
                     <v-list-item
                       v-for="(subitem, i) in item.submenu"
                       :key="i"
@@ -84,7 +91,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-main>
-      <v-container fluid>
+      <v-container fluid class="pa-0">
         <nuxt />
       </v-container>
     </v-main>
@@ -94,7 +101,7 @@
         <v-card-title class="light-blue darken-4">
           <v-container>
             <v-row>
-              <v-col cols="3">
+              <v-col md="3">
                 <NuxtLink to="/" class="d-block">
                   <v-img
                     contain
@@ -103,12 +110,11 @@
                   ></v-img>
                 </NuxtLink>
               </v-col>
-              <v-col v-for="menu in footerMenus" :key="menu._id" cols="2">
+              <v-col v-for="menu in footerMenus" :key="menu._id" md="2">
                 <v-list dense class="light-blue darken-4 white--text pt-0">
-                  <v-subheader
-                    class="pt-0 white--text text-uppercase text-body-1"
-                    >{{ menu.title }}</v-subheader
-                  >
+                  <v-subheader class="pt-0 white--text text-body-1">{{
+                    menu.title
+                  }}</v-subheader>
                   <v-list-item
                     v-for="(item, i) in menu.items"
                     :key="i"
@@ -116,9 +122,11 @@
                     router
                     exact
                     active-class="active"
-                    class="white--text text-body-2"
+                    class="white--text"
                   >
-                    <span class="white--text">{{ item.title }}</span>
+                    <span class="white--text text-body-2">{{
+                      item.title
+                    }}</span>
                   </v-list-item>
                 </v-list>
               </v-col>
@@ -175,6 +183,27 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active),
+.theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-icon,
+.theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-btn,
+.theme--dark.v-tabs > .v-tabs-bar .v-tab--disabled {
+  color: #fff;
+}
+.theme--dark.v-tabs .v-tab::before,
+.theme--dark.v-tabs .v-tab:hover::before,
+.theme--dark.v-tabs .v-tab--active::before,
+.theme--dark.v-tabs .v-tab--active:hover::before,
+.v-tab .theme--dark.v-btn:hover::before,
+.v-tab--active .theme--dark.v-btn:hover::before {
+  opacity: $tabs-item-hover-opacity !important;
+}
+.theme--dark.v-tabs .v-tab:focus::before,
+.theme--dark.v-tabs .v-tab--active:focus::before {
+  opacity: $tabs-item-focus-opacity !important;
+}
+.v-main[style] {
+  padding: 0 !important;
+}
 .theme--light.v-application {
   color: #37474f;
 }
