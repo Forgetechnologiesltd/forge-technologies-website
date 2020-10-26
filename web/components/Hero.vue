@@ -16,7 +16,7 @@
                   class="white--text mx-auto"
                   justify="center"
                 >
-                  <v-col class="white--text text-center" cols="3">
+                  <v-col class="white--text text-center" xs="8" md="3">
                     <h2
                       :class="[
                         $vuetify.breakpoint.smAndDown

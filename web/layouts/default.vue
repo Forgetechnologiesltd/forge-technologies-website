@@ -101,7 +101,7 @@
         <v-card-title class="light-blue darken-4">
           <v-container>
             <v-row>
-              <v-col md="3">
+              <v-col cols="12" md="3" order="12" order-md="1">
                 <NuxtLink to="/" class="d-block">
                   <v-img
                     contain
@@ -110,7 +110,13 @@
                   ></v-img>
                 </NuxtLink>
               </v-col>
-              <v-col v-for="menu in footerMenus" :key="menu._id" md="2">
+              <v-col
+                v-for="menu in footerMenus"
+                :key="menu._id"
+                cols="12"
+                order-md="2"
+                md="2"
+              >
                 <v-list dense class="light-blue darken-4 white--text pt-0">
                   <v-subheader class="pt-0 white--text text-body-1">{{
                     menu.title
