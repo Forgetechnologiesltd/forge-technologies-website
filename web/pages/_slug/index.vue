@@ -16,7 +16,22 @@ const query = groq`*[_type == "route" && slug.current == $slug][0]{
   page-> {
     title,
     slug,
-    content
+    content[] {
+      ...,
+      cta {
+        title,
+        kind,
+        "slug": landingPageRoute->slug.current
+      },
+      caregiverItems[]{
+        ...,
+        cta {
+          title,
+          kind,
+          "slug": landingPageRoute->slug.current
+        },
+      }
+    }
   }
 }`
 
