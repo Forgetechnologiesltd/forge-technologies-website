@@ -13,6 +13,7 @@ import Creator from '~/components/Creator'
 import Caregiver from '~/components/Caregiver'
 import Everyman from '~/components/Everyman'
 import Outlaw from '~/components/Outlaw'
+import Jester from '~/components/Jester'
 
 const ctaQuery = `cta {
         title,
@@ -46,6 +47,7 @@ const serializers = {
     caregiver: Caregiver,
     everyman: Everyman,
     outlaw: Outlaw,
+    jester: Jester,
   },
 }
 
