@@ -28,7 +28,7 @@
 - **The Caregiver**: Two of Heading, text, image and CTA
   ![Image of The Caregiver](images/caregiver.png)
 
-- **The Jester**: Icon, Heading, short text, image, CTA and a toggle to swap image and text sides
+- **The Jester**: Icon, Heading, short text, image and a toggle to swap image and text sides
   ![Image of The Jester](images/jester.png)
 
 - **The Everyman**: Content in tabs. Tab title and button to add other content types, as many as necessary.
