@@ -96,7 +96,7 @@
       </v-container>
     </v-main>
 
-    <v-footer padless class="mt-10">
+    <v-footer padless class="mt-0">
       <v-card class="flex" flat tile>
         <v-card-title class="light-blue darken-4">
           <v-container>
