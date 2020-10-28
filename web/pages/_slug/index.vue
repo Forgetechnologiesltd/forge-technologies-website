@@ -12,24 +12,22 @@ import Explorer from '~/components/Explorer'
 import Creator from '~/components/Creator'
 import Caregiver from '~/components/Caregiver'
 
+const ctaQuery = `cta {
+        title,
+        kind,
+        "slug": landingPageRoute->slug.current
+      }`
+
 const query = groq`*[_type == "route" && slug.current == $slug][0]{
   page-> {
     title,
     slug,
     content[] {
       ...,
-      cta {
-        title,
-        kind,
-        "slug": landingPageRoute->slug.current
-      },
+      ${ctaQuery},
       caregiverItems[]{
         ...,
-        cta {
-          title,
-          kind,
-          "slug": landingPageRoute->slug.current
-        },
+        ${ctaQuery},
       }
     }
   }
