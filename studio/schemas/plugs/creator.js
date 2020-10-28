@@ -32,8 +32,8 @@ export default {
       type: "string",
       options: {
         list: [
-          { title: "Image Left", value: "left" },
-          { title: "Image Right", value: "Western" },
+          { title: "Text Left", value: "left" },
+          { title: "Text Right", value: "right" },
         ],
         layout: "radio",
       },
