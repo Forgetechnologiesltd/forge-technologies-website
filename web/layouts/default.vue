@@ -6,8 +6,8 @@
       color="transparent"
       prominent
       shrink-on-scroll
-      :max-height="[$vuetify.breakpoint.mdAndUp ? '100' : '70']"
-      :min-height="[$vuetify.breakpoint.mdAndUp ? '100' : '70']"
+      :max-height="$vuetify.breakpoint.mdAndUp ? '100' : '70'"
+      :min-height="$vuetify.breakpoint.mdAndUp ? '100' : '70'"
     >
       <v-app-bar-nav-icon
         dark
