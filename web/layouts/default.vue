@@ -1,25 +1,32 @@
 <template>
   <v-app class="pb-0">
-    <v-app-bar flat app color="transparent" height="100">
+    <v-app-bar
+      flat
+      app
+      color="transparent"
+      prominent
+      shrink-on-scroll
+      :max-height="[$vuetify.breakpoint.mdAndUp ? '100' : '70']"
+      :min-height="[$vuetify.breakpoint.mdAndUp ? '100' : '70']"
+    >
       <v-app-bar-nav-icon
         dark
         v-if="$vuetify.breakpoint.smAndDown"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
       <v-container>
-        <v-row>
-          <v-col cols="2">
-            <v-avatar class="mr-3" size="200">
+        <v-row class="pt-0">
+          <v-col cols="12" md="2" class="pt-0">
+            <v-avatar class="mr-3 ml-3" width="200">
               <NuxtLink to="/"
-                ><v-img contain src="/forge-logo-inline-white.svg"></v-img
+                ><v-img src="/forge-logo-inline-white.svg"></v-img
               ></NuxtLink>
             </v-avatar>
           </v-col>
-          <v-col cols="10" class="pt-3">
+          <v-col cols="10">
             <v-tabs
               v-if="$vuetify.breakpoint.mdAndUp"
               right
-              class="mt-16"
               color="white"
               dark
               background-color="transparent"
@@ -189,6 +196,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.v-application .transparent.v-app-bar.v-app-bar--fixed.v-app-bar--is-scrolled {
+  background-color: rgba($color: #000000, $alpha: 0.4) !important;
+}
 .theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active),
 .theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-icon,
 .theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-btn,
