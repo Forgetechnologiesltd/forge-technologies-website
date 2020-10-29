@@ -11,12 +11,29 @@ import Ruler from '~/components/Ruler'
 import Explorer from '~/components/Explorer'
 import Creator from '~/components/Creator'
 import Caregiver from '~/components/Caregiver'
+import Everyman from '~/components/Everyman'
+import Outlaw from '~/components/Outlaw'
+import Jester from '~/components/Jester'
+import Innocent from '~/components/Innocent'
+
+const ctaQuery = `cta {
+        title,
+        kind,
+        "slug": landingPageRoute->slug.current
+      }`
 
 const query = groq`*[_type == "route" && slug.current == "homepage"][0]{
   page-> {
     title,
     slug,
-    content
+    content[] {
+      ...,
+      ${ctaQuery},
+      caregiverItems[]{
+        ...,
+        ${ctaQuery},
+      }
+    }
   }
 }`
 
@@ -29,6 +46,10 @@ const serializers = {
     explorer: Explorer,
     creator: Creator,
     caregiver: Caregiver,
+    everyman: Everyman,
+    outlaw: Outlaw,
+    jester: Jester,
+    innocent: Innocent,
   },
 }
 
