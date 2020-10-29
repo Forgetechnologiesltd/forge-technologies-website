@@ -21,7 +21,9 @@
                     :class="[side === 'right' ? ' text-right ' : ' text-left ']"
                     xs="6"
                   >
-                    <v-icon large color="white"> mdi-{{ icon.icon }} </v-icon>
+                    <v-icon v-if="icon" large color="white">
+                      mdi-{{ icon.icon }}
+                    </v-icon>
                     <h4 class="mb-0 text-h5 text-md-h4 pl-0">
                       {{ heading }}
                     </h4>
