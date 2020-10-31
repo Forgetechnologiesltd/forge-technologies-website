@@ -1,13 +1,15 @@
 <template>
-  <v-container fluid>
+  <v-container class="container--wider mb-7">
     <v-row>
       <v-col v-for="item in items" :key="item.id" cols="12" md="4">
-        <v-icon large color="secondary"> mdi-{{ item.icon.icon }} </v-icon>
-        <h4 class="mb-5 text-h5 text-md-h4 pl-0">
+        <v-icon medium color="blue-grey lighten-2">
+          mdi-{{ item.icon.icon }}
+        </v-icon>
+        <h4 class="mb-3 mt-3 text-h5 text-md-h4 pl-0">
           {{ item.heading }}
         </h4>
         <SanityContent
-          class="text-body-2 col-md-7 pl-0"
+          class="text-body-2 col-md-10 pl-0 pt-0"
           :blocks="item.paragraph"
         />
         <v-btn
@@ -35,5 +37,8 @@ export default {
 <style lang="scss" scoped>
 img {
   max-width: 100%;
+}
+.container--wider {
+  max-width: 1290px !important;
 }
 </style>
