@@ -43,7 +43,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/imageHelper.js'],
+  plugins: ['~/plugins/imageHelper.js', '~/plugins/scrollHelper.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -63,9 +63,9 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     treeShake: true,
-    options: {
-      customProperties: true,
-    },
+    // options: {
+    //   customProperties: true,
+    // },
     theme: {
       themes: {
         light: {
@@ -104,6 +104,19 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true,
+          },
+        },
+      },
+    },
     extend(config, ctx) {
       if (ctx.isDev) {
         config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'

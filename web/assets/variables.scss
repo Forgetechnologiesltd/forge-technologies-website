@@ -100,3 +100,7 @@ $tabs-item-focus-opacity: 0;
 $menu-content-elevation: 0;
 $btn-letter-spacing: normal;
 $btn-text-transform: inherit;
+$btn-active-opacity: 0;
+$btn-focus-opacity: 0;
+$btn-hover-opacity: 0;
+@import '~vuetify/src/styles/styles.sass';
