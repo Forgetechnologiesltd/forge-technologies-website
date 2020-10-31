@@ -15,6 +15,7 @@ import Everyman from '~/components/Everyman'
 import Outlaw from '~/components/Outlaw'
 import Jester from '~/components/Jester'
 import Innocent from '~/components/Innocent'
+import Sage from '~/components/Sage'
 
 const ctaQuery = `cta {
         title,
@@ -50,6 +51,7 @@ const serializers = {
     outlaw: Outlaw,
     jester: Jester,
     innocent: Innocent,
+    sage: Sage,
   },
 }
 
