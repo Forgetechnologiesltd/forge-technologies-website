@@ -13,6 +13,7 @@
         :dark="!$scrollHelper.isScrolled"
         v-if="$vuetify.breakpoint.smAndDown"
         @click.stop="drawer = !drawer"
+        class="mt-2"
       ></v-app-bar-nav-icon>
       <v-container>
         <v-row class="pt-0 pt-md-3">
