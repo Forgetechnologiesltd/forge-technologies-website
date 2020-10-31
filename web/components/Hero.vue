@@ -16,19 +16,20 @@
                   class="white--text mx-auto"
                   justify="center"
                 >
-                  <v-col class="white--text text-center" xs="8" md="3">
+                  <v-col class="white--text text-center" cols="10" md="8">
                     <h2
                       :class="[
-                        $vuetify.breakpoint.smAndDown
-                          ? 'display-1'
-                          : 'display-2',
+                        $vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h2',
                       ]"
-                      class="font-weight-light mb-6"
+                      class="font-weight-light mb-3 mb-md-5"
                     >
                       {{ heading }}
                     </h2>
 
-                    <SanityContent :blocks="tagline" />
+                    <SanityContent
+                      class="col-12 col-md-8 text-center justify-md-center px-0 mx-auto"
+                      :blocks="tagline"
+                    />
                   </v-col>
                 </v-row>
               </v-container>
