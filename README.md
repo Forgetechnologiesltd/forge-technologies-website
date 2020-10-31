@@ -10,7 +10,7 @@
 - **The Outlaw**: 3 items of Image (maybe icon?) Heading, small paragraph and CTA.
   ![Image of The Outlaw](images/outlaw.png)
 
-- **The Sage**: Used for testimonials. Text for a quote and field for the author.
+- **The Sage**: Used for Forge Values. Text for a quote and field for the heading.
   ![Image of The Sage](images/sage.png)
 
 - **The Ruler**: Heading and team members

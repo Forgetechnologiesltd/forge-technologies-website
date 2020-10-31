@@ -4,14 +4,14 @@ export default {
   title: "The Sage",
   fields: [
     {
+      name: "heading",
+      type: "string",
+      title: "Heading",
+    },
+    {
       name: "quote",
       type: "simpleBlockContent",
       title: "Testimonial",
-    },
-    {
-      name: "author",
-      type: "string",
-      title: "Author",
     },
   ],
   preview: {
@@ -21,7 +21,7 @@ export default {
     prepare({ content }) {
       return {
         title:
-          "The Sage: Used for testimonials. Text for a quote and field for the author.",
+          "The Sage: Used for forge values. Text for a quote and field for the heading.",
       };
     },
   },
