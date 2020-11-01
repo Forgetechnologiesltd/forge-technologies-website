@@ -1,17 +1,19 @@
 <template>
-  <v-tabs centered>
-    <v-tab v-for="tab in tabs" :key="tab._key">{{ tab.title }}</v-tab>
+  <v-container fluid :id="`everyman-${_key}`" tag="section">
+    <v-tabs centered>
+      <v-tab v-for="tab in tabs" :key="tab._key">{{ tab.title }}</v-tab>
 
-    <v-tab-item v-for="tab in tabs" :key="tab._key">
-      <v-container fluid>
-        <v-row>
-          <v-col cols="12">
-            <SanityContent :blocks="tab.content" :serializers="serializers" />
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-tab-item>
-  </v-tabs>
+      <v-tab-item v-for="tab in tabs" :key="tab._key">
+        <v-container fluid>
+          <v-row>
+            <v-col cols="12">
+              <SanityContent :blocks="tab.content" :serializers="serializers" />
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-tab-item>
+    </v-tabs>
+  </v-container>
 </template>
 
 <script>
@@ -42,6 +44,7 @@ export default {
   name: 'Everyman',
   props: {
     tabs: Array,
+    _key: String,
   },
   data: () => ({ serializers }),
 }

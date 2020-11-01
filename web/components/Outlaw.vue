@@ -1,5 +1,9 @@
 <template>
-  <v-container class="container--wider mb-7">
+  <v-container
+    class="container--wider mb-7"
+    :id="`outlaw-${_key}`"
+    tag="section"
+  >
     <v-row>
       <v-col v-for="item in items" :key="item.id" cols="12" md="4">
         <v-icon medium color="blue-grey lighten-2">
@@ -30,6 +34,7 @@ export default {
   name: 'Outlaw',
   props: {
     items: Array,
+    _key: String,
   },
 }
 </script>
@@ -37,8 +42,5 @@ export default {
 <style lang="scss" scoped>
 img {
   max-width: 100%;
-}
-.container--wider {
-  max-width: 1290px !important;
 }
 </style>

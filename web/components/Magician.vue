@@ -1,5 +1,11 @@
 <template>
-  <v-container fluid class="pa-0 mb-7 mt-md-7" fill-height>
+  <v-container
+    fluid
+    class="pa-0 mb-7 mt-md-7"
+    fill-height
+    :id="`magician-${_key}`"
+    tag="section"
+  >
     <v-row>
       <v-col cols="6" class="ml-n16">
         <v-img
@@ -35,6 +41,7 @@ export default {
     paragraph: Array,
     mediumSizeImage: Object,
     cta: Object,
+    _key: String,
   },
 }
 </script>

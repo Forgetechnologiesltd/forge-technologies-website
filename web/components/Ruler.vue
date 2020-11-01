@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container :id="`${_type}-${_key}`" tag="section">
     <h1>{{ heading }}</h1>
     <v-row>
       <v-col
@@ -21,6 +21,8 @@ export default {
   props: {
     heading: String,
     teamMembers: Array,
+    _key: String,
+    _type: String,
   },
 }
 </script>

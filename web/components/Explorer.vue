@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container :id="`explorer-${_key}`" tag="section">
     <v-carousel light>
       <v-carousel-item v-for="item in explorerItems" :key="item._key">
         <v-row class="fill-height" align="center" justify="center">
@@ -9,7 +9,7 @@
         </v-row>
       </v-carousel-item>
     </v-carousel>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -17,6 +17,7 @@ export default {
   name: 'Explorer',
   props: {
     explorerItems: Array,
+    _key: String,
   },
 }
 </script>

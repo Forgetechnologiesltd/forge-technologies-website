@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="pa-0">
+  <v-container fluid class="pa-0" :id="`caregiver-${_key}`" tag="section">
     <v-row no-gutters>
       <v-col v-for="item in caregiverItems" :key="item.id" cols="12" md="6">
         <v-img
@@ -42,6 +42,7 @@ export default {
   name: 'Caregiver',
   props: {
     caregiverItems: Array,
+    _key: String,
   },
 }
 </script>
