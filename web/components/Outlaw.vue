@@ -6,7 +6,7 @@
   >
     <v-row>
       <v-col v-for="item in items" :key="item.id" cols="12" md="4">
-        <v-icon medium color="blue-grey lighten-2">
+        <v-icon v-if="item.icon" medium color="blue-grey lighten-2">
           mdi-{{ item.icon.icon }}
         </v-icon>
         <h4 class="mb-3 mt-3 text-h5 text-md-h4 pl-0">
