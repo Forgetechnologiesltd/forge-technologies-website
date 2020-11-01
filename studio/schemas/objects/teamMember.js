@@ -7,6 +7,9 @@ export default {
       name: "image",
       type: "image",
       title: "Avatar",
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: "name",
