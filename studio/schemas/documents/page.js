@@ -40,6 +40,7 @@ export default {
         { type: "caregiver" },
         { type: "jester" },
         { type: "everyman" },
+        { type: "company" },
       ],
     },
   ],

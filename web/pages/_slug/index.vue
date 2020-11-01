@@ -16,6 +16,7 @@ import Outlaw from '~/components/Outlaw'
 import Jester from '~/components/Jester'
 import Innocent from '~/components/Innocent'
 import Sage from '~/components/Sage'
+import Company from '~/components/Company'
 
 const ctaQuery = `cta {
         title,
@@ -52,6 +53,7 @@ const serializers = {
     jester: Jester,
     innocent: Innocent,
     sage: Sage,
+    company: Company,
   },
 }
 
@@ -60,7 +62,6 @@ export default {
     const result = await this.$sanity.fetch(query, {
       slug: this.$route.params.slug,
     })
-
     this.page = result.page
   },
   data: () => ({ serializers, page: {} }),

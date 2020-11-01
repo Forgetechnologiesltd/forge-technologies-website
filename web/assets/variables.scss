@@ -104,3 +104,7 @@ $btn-active-opacity: 0;
 $btn-focus-opacity: 0;
 $btn-hover-opacity: 0;
 @import '~vuetify/src/styles/styles.sass';
+
+.container--wider {
+  max-width: 1290px !important;
+}

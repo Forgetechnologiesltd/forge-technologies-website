@@ -18,6 +18,8 @@ export { default as textWithIllustration } from "./textWithIllustration";
 export { default as illustration } from "./illustration";
 export { default as ctaColumns } from "./ctaColumns";
 export { default as ctaPlug } from "./ctaPlug";
+export { default as company } from "./company";
+export { default as companyItem } from "./companyItem";
 export { default as uiComponentRef } from "./uiComponent";
 // export { default as pricing } from "./pricing";
 /*
