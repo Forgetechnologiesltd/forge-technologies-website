@@ -3,10 +3,17 @@
     <v-container fluid class="pa-0 mb-7">
       <v-row no-gutters>
         <v-col cols="12">
-          <v-img src="/forge-values-bg.png" contain>
+          <v-img
+            src="/forge-values-bg.png"
+            :contain="$vuetify.breakpoint.mdAndUp"
+          >
             <v-container fill-height>
               <v-row class="mx-auto" justify="center">
-                <v-col class="justify-center mx-auto text-center px-0" cols="6">
+                <v-col
+                  class="justify-center mx-auto text-center px-0"
+                  cols="10"
+                  md="6"
+                >
                   <v-avatar class="mr-3 ml-3" size="60" tile>
                     <v-img src="/forge-logo-icon.svg" contain></v-img>
                   </v-avatar>
@@ -15,7 +22,7 @@
                     {{ heading }}
                   </h4>
                   <SanityContent
-                    class="text-body-2 col-md-8 pl-0 mx-auto justify-center"
+                    class="text-body-2 col-12 col-md-8 px-0 mx-auto justify-center"
                     :blocks="quote"
                   />
                 </v-col>
