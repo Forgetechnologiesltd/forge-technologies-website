@@ -41,6 +41,7 @@ export default {
         { type: "jester" },
         { type: "everyman" },
         { type: "company" },
+        { type: "contact" },
       ],
     },
   ],

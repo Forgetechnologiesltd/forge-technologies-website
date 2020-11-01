@@ -16,7 +16,8 @@
     "@sanity/image-url": "^0.140.19",
     "consola": "^2.15.0",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.5"
+    "nuxt": "^2.14.5",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",

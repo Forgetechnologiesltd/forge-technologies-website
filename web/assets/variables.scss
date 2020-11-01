@@ -108,3 +108,14 @@ $btn-hover-opacity: 0;
 .container--wider {
   max-width: 1290px !important;
 }
+
+label[style].theme--light.v-label {
+  font-size: 10px;
+  left: 10px !important;
+}
+.v-text-field {
+  font-size: 12px;
+}
+.v-input input {
+  padding-left: 10px;
+}

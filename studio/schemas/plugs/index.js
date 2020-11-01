@@ -20,6 +20,7 @@ export { default as ctaColumns } from "./ctaColumns";
 export { default as ctaPlug } from "./ctaPlug";
 export { default as company } from "./company";
 export { default as companyItem } from "./companyItem";
+export { default as contact } from "./contact";
 export { default as uiComponentRef } from "./uiComponent";
 // export { default as pricing } from "./pricing";
 /*
