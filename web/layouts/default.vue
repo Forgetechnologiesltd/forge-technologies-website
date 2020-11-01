@@ -18,7 +18,7 @@
       <v-container>
         <v-row class="pt-0 pt-md-3">
           <v-col cols="12" md="2" class="pt-0 pt-md-3">
-            <v-avatar class="mr-3 ml-3" width="200">
+            <v-avatar class="mr-3 ml-3" width="200" tile>
               <NuxtLink to="/"
                 ><v-img
                   :src="
