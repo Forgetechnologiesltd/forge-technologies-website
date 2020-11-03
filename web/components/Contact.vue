@@ -1,14 +1,14 @@
 <template>
   <v-container
-    class="blue-grey darken-3 my-10 my-md-16 py-n8"
+    class="blue-grey darken-3 my-10 my-md-16 py-n8 contact-form"
     :id="`contact-${_key}`"
     tag="section"
     fluid
-    style="max-height: 350px"
+    :style="$vuetify.breakpoint.mdAndUp ? 'max-height: 350px' : ''"
   >
     <v-container>
       <v-row>
-        <v-col cols="12" md="6" class="pr-16 d-flex align-center">
+        <v-col cols="12" md="6" class="pr-16 d-md-flex align-md-center">
           <v-card dark class="transparent align-self-center" flat>
             <h1 class="text-white text-h5 text-md-h4 mb-2">{{ heading }}</h1>
             <SanityContent
@@ -18,7 +18,10 @@
           </v-card>
         </v-col>
         <v-col cols="12" md="6" class="">
-          <v-card class="primary my-md-n16 px-md-8 d-flex align-self-top" flat>
+          <v-card
+            class="primary my-md-n16 px-md-8 d-md-flex align-md-self-top"
+            flat
+          >
             <v-form class="">
               <v-container class="pt-md-8">
                 <v-row justify="space-between">
