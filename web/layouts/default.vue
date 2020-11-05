@@ -134,14 +134,14 @@
 
     <v-footer padless class="mt-0">
       <v-card class="flex" flat tile>
-        <v-card-title class="light-blue darken-4">
+        <v-card-title>
           <v-container>
             <v-row>
               <v-col cols="12" md="3" order="12" order-md="1">
                 <NuxtLink to="/" class="d-block">
                   <v-img
                     contain
-                    src="/forge-logo-inline-white.svg"
+                    src="/forge-logo-inline.svg"
                     max-width="200"
                   ></v-img>
                 </NuxtLink>
@@ -153,8 +153,8 @@
                 order-md="2"
                 md="2"
               >
-                <v-list dense class="light-blue darken-4 white--text pt-0">
-                  <v-subheader class="pt-0 white--text text-body-1">{{
+                <v-list dense class="pt-0">
+                  <v-subheader class="pt-0 pl-0 text-body-1">{{
                     menu.title
                   }}</v-subheader>
                   <v-list-item
@@ -164,9 +164,9 @@
                     router
                     exact
                     active-class="active"
-                    class="white--text"
+                    class="primary--text pl-0"
                   >
-                    <span class="white--text text-body-2">{{
+                    <span class="text-body-1 primary--text">{{
                       item.title
                     }}</span>
                   </v-list-item>
