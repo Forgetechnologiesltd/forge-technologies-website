@@ -17,6 +17,7 @@ import Jester from '~/components/Jester'
 import Innocent from '~/components/Innocent'
 import Sage from '~/components/Sage'
 import Company from '~/components/Company'
+import Contact from '~/components/Contact'
 
 const ctaQuery = `cta {
         title,
@@ -54,6 +55,7 @@ const serializers = {
     innocent: Innocent,
     sage: Sage,
     company: Company,
+    contact: Contact,
   },
 }
 
