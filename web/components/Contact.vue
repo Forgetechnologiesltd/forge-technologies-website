@@ -28,7 +28,7 @@
                   <v-col cols="12" md="6" class="my-0 py-0">
                     <v-text-field
                       hide-details="auto"
-                      class="text-blue-grey text-darken-3"
+                      class="blue-grey--text text--darken-3"
                       label="First Name"
                       v-model="name"
                       background-color="white"
