@@ -18,6 +18,7 @@ import Innocent from '~/components/Innocent'
 import Sage from '~/components/Sage'
 import Company from '~/components/Company'
 import Contact from '~/components/Contact'
+import Wildcard from '~/components/Wildcard'
 
 const ctaQuery = `cta {
         title,
@@ -56,6 +57,7 @@ const serializers = {
     sage: Sage,
     company: Company,
     contact: Contact,
+    wildcard: Wildcard,
   },
 }
 

@@ -42,6 +42,7 @@ export default {
         { type: "everyman" },
         { type: "company" },
         { type: "contact" },
+        { type: "wildcard" },
       ],
     },
   ],

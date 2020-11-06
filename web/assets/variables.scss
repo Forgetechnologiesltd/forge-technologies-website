@@ -111,6 +111,9 @@ $btn-hover-opacity: 0;
 .container--wider {
   max-width: 1290px !important;
 }
+.container--narrower {
+  max-width: 900px !important;
+}
 
 label[style].theme--light.v-label {
   font-size: 10px;

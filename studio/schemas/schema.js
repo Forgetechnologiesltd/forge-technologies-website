@@ -37,6 +37,7 @@ import openGraph from "./objects/openGraph";
 import latex from "./latex";
 import submenuItem from "./objects/submenuItem";
 import everyman from "./objects/everyman";
+import wildcard from "./objects/wildcard";
 import tabbableContent from "./objects/tabbableContent";
 
 const allPlugs = Object.values(plugs).map((plug) => {
@@ -76,6 +77,7 @@ export default createSchema({
       videoEmbed,
       bodyPortableText,
       excerptPortableText,
+      wildcard,
     ])
     .concat(allPlugs),
 });
