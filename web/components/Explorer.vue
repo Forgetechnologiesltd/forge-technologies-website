@@ -6,7 +6,6 @@
           :min-height="'calc(60vh)'"
           :max-height="'calc(60vh)'"
           :src="$imageHelper(item.image).url()"
-          gradient="rgba(0,0,0,.33), rgba(0,0,0,.7)"
         >
           <v-row class="fill-height" align="center" justify="center">
             <v-col class="col-12 col-md-8 px-0 mx-auto justify-center">

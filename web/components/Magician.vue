@@ -12,7 +12,6 @@
           :min-height="'calc(50vh)'"
           :max-height="'calc(50vh)'"
           :src="$imageHelper(mediumSizeImage).url()"
-          gradient="rgba(0,0,0,.4), rgba(0,0,0,.5)"
         >
         </v-img>
       </v-col>

@@ -6,7 +6,6 @@
           :min-height="'calc(40vh)'"
           :max-height="'calc(40vh)'"
           :src="$imageHelper(item.image).url()"
-          gradient="rgba(0,0,0,.4), rgba(0,0,0,.5)"
         >
           <v-theme-provider dark>
             <v-container fill-height>
