@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'Magician',
+  name: 'Wildcard',
   props: {
     block: Object,
     _key: String,
