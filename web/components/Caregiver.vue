@@ -9,7 +9,7 @@
         >
           <v-theme-provider dark>
             <v-container fill-height>
-              <v-row align="left" class="white--text mx-auto" justify="center">
+              <v-row class="white--text mx-auto" justify="center">
                 <v-col class="white--text offset-md-1" xs="6">
                   <h4 class="mb-5 text-h5 text-md-h4 pl-0">
                     {{ item.heading }}
