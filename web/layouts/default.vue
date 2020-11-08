@@ -60,7 +60,12 @@
                       v-on="on"
                       @click.native="
                         () => {
-                          item.submenu ? (tab = kebabCase(item.title)) : ''
+                          if (item.submenu) {
+                            tab = kebabCase(item.title)
+                            if (!$scrollHelper.isScrolled) {
+                              $vuetify.goTo(129, { duration: 1, offset: 0 })
+                            }
+                          }
                         }
                       "
                     >
