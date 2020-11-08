@@ -9,10 +9,12 @@
         >
           <v-theme-provider dark>
             <v-container fill-height>
-              <v-row :align="side" class="white--text mx-auto" justify="center">
+              <v-row class="white--text mx-auto">
                 <v-col
                   class="white--text offset-md-1 px-0"
-                  :class="[side === 'right' ? ' text-right ' : ' text-left ']"
+                  :class="[
+                    normalisedSide === 'right' ? ' text-right ' : ' text-left ',
+                  ]"
                   xs="6"
                 >
                   <h4 class="mb-0 text-h5 text-md-h4 pl-0">
@@ -21,7 +23,9 @@
                   <SanityContent
                     class="text-body-2 col-md-7 pl-0"
                     :class="[
-                      side === 'right' ? ' text-right ml-auto ' : ' text-left ',
+                      normalisedSide === 'right'
+                        ? ' text-right ml-auto '
+                        : ' text-left ',
                     ]"
                     :blocks="shortText"
                   />
@@ -54,9 +58,27 @@ export default {
     side: String,
     _key: String,
   },
+  data() {
+    return {
+      normalisedSide: '',
+      flexSide: '',
+    }
+  },
   mounted() {
-    if (this.side === 'Western') this.side = 'right'
-    if (this.side === undefined) this.side = 'left'
+    this.normaliseSide()
+  },
+  methods: {
+    normaliseSide() {
+      this.normalisedSide = this.side
+
+      if (this.side === 'Western') {
+        this.normalisedSide = 'right'
+      }
+      if (this.side === undefined) {
+        this.normalisedSide = 'left'
+      }
+      this.flexSide = this.normalisedSide === 'left' ? 'start' : 'end'
+    },
   },
 }
 </script>
