@@ -4,6 +4,19 @@ export default {
   title: "The Hero",
   fields: [
     {
+      title: "Text position",
+      name: "textPosition",
+      type: "string",
+      options: {
+        list: [
+          { title: "Text Left", value: "left" },
+          { title: "Text Centered", value: "center" },
+          { title: "Text Right", value: "right" },
+        ],
+        layout: "radio",
+      },
+    },
+    {
       name: "heading",
       type: "string",
       title: "Heading",
