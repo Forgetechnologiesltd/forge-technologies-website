@@ -5,7 +5,7 @@
         <v-img
           :min-height="'calc(60vh)'"
           :max-height="'calc(60vh)'"
-          :src="$imageHelper(item.image).url()"
+          :src="$imageHelper(item.image).auto('format').url()"
         >
           <v-row class="fill-height" align="center" justify="center">
             <v-col class="col-12 col-md-8 px-0 mx-auto justify-center">
