@@ -1,7 +1,9 @@
 <template>
-  <v-container fluid :id="`everyman-${_key}`" tag="section">
+  <v-container fluid :id="componentId" tag="section">
     <v-tabs centered>
-      <v-tab v-for="tab in tabs" :key="tab._key">{{ tab.title }}</v-tab>
+      <v-tab v-for="tab in tabs" :key="tab._key" @click="scrollToBar()">{{
+        tab.title
+      }}</v-tab>
 
       <v-tab-item v-for="tab in tabs" :key="tab._key">
         <v-container fluid>
@@ -46,7 +48,19 @@ export default {
     tabs: Array,
     _key: String,
   },
-  data: () => ({ serializers }),
+  data() {
+    return { serializers, componentId: `everyman-${this._key}` }
+  },
+  methods: {
+    scrollToBar() {
+      var offset = this.$scrollHelper.isScrolled ? 27 : -45
+      this.$vuetify.goTo(`#${this.componentId}`, {
+        easing: 'easeOutCubic',
+        duration: 730,
+        offset,
+      })
+    },
+  },
 }
 </script>
 
