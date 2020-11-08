@@ -1,49 +1,61 @@
 <template>
-  <div>
-    <v-container fluid class="pa-0 mb-7">
-      <v-row no-gutters>
-        <v-col cols="12">
-          <v-img
-            :min-height="'calc(32vh)'"
-            :max-height="'calc(32vh)'"
-            :src="$imageHelper(image).url()"
-          >
-            <v-theme-provider dark>
-              <v-container fill-height>
-                <v-row
-                  :align="side"
-                  class="white--text mx-auto"
-                  justify="center"
-                >
-                  <v-col
-                    class="white--text offset-md-1 px-0"
-                    :class="[side === 'right' ? ' text-right ' : ' text-left ']"
-                    xs="6"
-                  >
-                    <v-icon v-if="icon" large color="white">
-                      mdi-{{ icon.icon }}
-                    </v-icon>
-                    <h4 class="mb-0 text-h5 text-md-h4 pl-0">
-                      {{ heading }}
-                    </h4>
-                    <SanityContent
-                      class="text-body-2 col-md-7 pl-0"
-                      :class="[
-                        side === 'right'
-                          ? ' text-right ml-auto '
-                          : ' text-left ',
-                      ]"
-                      :blocks="shortText"
-                    />
-                  </v-col>
-                </v-row>
-              </v-container>
-            </v-theme-provider>
-          </v-img>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+  <v-container fluid class="pa-0 mb-7" :id="`jester-${_key}`" tag="section">
+    <v-row>
+      <v-col cols="12">
+        <v-theme-provider dark>
+          <v-container fill-height class="px-0">
+            <v-row class="blue-grey--text text--darken-3 mx-auto">
+              <v-col
+                cols="12"
+                md="6"
+                :order="
+                  normalisedSide === 'right' && $vuetify.breakpoint.mdAndUp
+                    ? 'first'
+                    : 'last'
+                "
+                class="px-0"
+              >
+                <img :src="$imageHelper(image).auto('format').url()" />
+              </v-col>
+              <v-col
+                class="blue-grey--text text--darken-3 px-0 px-md-3 pb-0 d-md-flex align-md-center"
+                :class="[
+                  normalisedSide === 'right' && $vuetify.breakpoint.mdAndUp
+                    ? ' text-right '
+                    : ' text-left ',
+                ]"
+                :order="
+                  normalisedSide === 'right' && $vuetify.breakpoint.mdAndUp
+                    ? 'last'
+                    : $vuetify.breakpoint.mdAndDown
+                    ? 'last'
+                    : 'first'
+                "
+                cols="12"
+                md="6"
+              >
+                <v-card background-color="white" flat light>
+                  <v-icon v-if="icon" large> mdi-{{ icon.icon }} </v-icon>
+                  <h4 class="mb-0 text-h5 text-md-h4 pl-0">
+                    {{ heading }}
+                  </h4>
+                  <SanityContent
+                    class="text-body-2 col-md-10 px-0 pb-0"
+                    :class="[
+                      normalisedSide === 'right' && $vuetify.breakpoint.mdAndUp
+                        ? ' text-right ml-auto '
+                        : ' text-left ',
+                    ]"
+                    :blocks="shortText"
+                  />
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-theme-provider>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -55,6 +67,26 @@ export default {
     image: Object,
     side: String,
     icon: Object,
+    _key: String,
+  },
+  data() {
+    return {
+      normalisedSide: 'left',
+    }
+  },
+  mounted() {
+    this.normaliseSide()
+  },
+  methods: {
+    normaliseSide() {
+      this.normalisedSide = this.side
+      if (this.side === 'Western') {
+        this.normalisedSide = 'right'
+      }
+      if (this.side === undefined) {
+        this.normalisedSide = 'left'
+      }
+    },
   },
 }
 </script>
