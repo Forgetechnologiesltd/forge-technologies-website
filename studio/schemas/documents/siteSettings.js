@@ -32,7 +32,12 @@ export default {
         },
       ],
     },
-
+    {
+      name: "footerText",
+      type: "simpleBlockContent",
+      title: "Footer text",
+      description: "Text in the footer for registration and other small print",
+    },
     {
       title: "Open graph",
       name: "openGraph",

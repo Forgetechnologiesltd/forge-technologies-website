@@ -181,8 +181,11 @@
           </v-container>
         </v-card-title>
 
-        <v-card-text class="py-1 white--text light-blue darken-1">
+        <v-card-text
+          class="py-1 white--text light-blue darken-1 d-flex justify-space-between"
+        >
           <span>&copy; Forge Technologies {{ new Date().getFullYear() }}</span>
+          <span>{{ footerText }}</span>
         </v-card-text>
       </v-card>
     </v-footer>
@@ -211,13 +214,19 @@ const footerMenusQuery = groq`*[_type == "footerMenu"] {
     "slug": landingPageRoute->slug.current,
   }
 }`
+const siteSettingsQuery = groq`*[_type == "siteSettings"][0] {
+  ...,
+  "footerText": footerText[0].children[0].text
+}`
 
 export default {
   async fetch() {
     const items = await this.$sanity.fetch(query)
     const footerMenus = await this.$sanity.fetch(footerMenusQuery)
+    const siteSettings = await this.$sanity.fetch(siteSettingsQuery)
     this.items = items
     this.footerMenus = footerMenus
+    this.footerText = siteSettings.footerText
   },
 
   data() {
@@ -229,6 +238,7 @@ export default {
       drawer: false,
       items: [],
       footerMenus: [],
+      footerText: '',
     }
   },
   mounted() {

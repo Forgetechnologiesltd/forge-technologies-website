@@ -1,6 +1,7 @@
 export default {
   type: "document",
   name: "footerMenu",
+  __experimental_actions: ["update", "create", "delete", "publish"],
   fields: [
     {
       type: "string",
