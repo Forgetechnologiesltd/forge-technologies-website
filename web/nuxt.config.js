@@ -50,6 +50,21 @@ export default async () => {
             ? builder.image(siteSettings.openGraph.image).url()
             : '',
         },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: process.env.URL,
+        },
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: process.env.URL,
+        },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
       link: [
