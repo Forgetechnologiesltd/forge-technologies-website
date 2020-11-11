@@ -69,5 +69,44 @@ export default {
     this.page = result.page
   },
   data: () => ({ serializers, page: {} }),
+  head() {
+    if (!this || !this.page || !this.page.openGraph) {
+      return
+    }
+    return {
+      title: this.page.openGraph.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.page.openGraph.description,
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: this.page.openGraph.keywords
+            ? this.page.openGraph.keywords.join(',')
+            : '',
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.page.openGraph.title,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.page.openGraph.description,
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.page.openGraph.image
+            ? this.$imageHelper(this.page.openGraph.image).url()
+            : '',
+        },
+      ],
+    }
+  },
 }
 </script>

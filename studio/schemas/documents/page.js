@@ -45,5 +45,11 @@ export default {
         { type: "wildcard" },
       ],
     },
+    {
+      title: "Open graph",
+      name: "openGraph",
+      description: "Page's meta tags ",
+      type: "openGraph",
+    },
   ],
 };
