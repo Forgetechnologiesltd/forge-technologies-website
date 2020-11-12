@@ -2,13 +2,9 @@
   <v-container fluid class="pa-0 mb-7" :id="`creator-${_key}`" tag="section">
     <v-row no-gutters>
       <v-col cols="12">
-        <v-img
-          :min-height="'calc(32vh)'"
-          :max-height="'calc(32vh)'"
-          :src="$imageHelper(image).url()"
-        >
+        <v-img :min-height="'calc(32vh)'" :src="$imageHelper(image).url()">
           <v-theme-provider dark>
-            <v-container fill-height>
+            <v-container fill-height class="px-5 px-md-0">
               <v-row class="white--text mx-auto">
                 <v-col
                   class="white--text offset-md-1 px-0"
