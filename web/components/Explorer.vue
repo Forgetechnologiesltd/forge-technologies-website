@@ -9,7 +9,7 @@
         >
           <v-row class="fill-height" align="center" justify="center">
             <v-col class="col-12 col-md-8 px-0 mx-auto justify-center">
-              <h3 class="text-h3 mx-auto justify-center text-center">
+              <h3 class="text-h5 text-md-h3 mx-auto justify-center text-center">
                 {{ item.heading }}
               </h3>
               <SanityContent
