@@ -1,5 +1,5 @@
 <template>
-  <v-container class="py-8" :id="`lover-${_key}`" tag="section">
+  <v-container class="py-8 px-5 px-md-0" :id="`lover-${_key}`" tag="section">
     <v-row>
       <v-col cols="12" md="6" class="pr-md-10 pr-lg-16"
         ><h2 class="mb-3 text-h4 pr-md-10 pr-lg-16">{{ heading }}</h2></v-col
