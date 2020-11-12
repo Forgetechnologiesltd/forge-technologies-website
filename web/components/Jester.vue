@@ -40,7 +40,7 @@
                     {{ heading }}
                   </h4>
                   <SanityContent
-                    class="text-body-2 col-md-10 px-0 pb-0"
+                    class="text-body-2 col-md-10 px-0 pb-0 mb-6"
                     :class="[
                       normalisedSide === 'right' && $vuetify.breakpoint.mdAndUp
                         ? ' text-right ml-auto '
@@ -48,6 +48,14 @@
                     ]"
                     :blocks="shortText"
                   />
+                  <v-btn
+                    v-if="cta && cta.title"
+                    depressed
+                    color="primary"
+                    nuxt
+                    :to="cta.slug"
+                    >{{ cta.title }}</v-btn
+                  >
                 </v-card>
               </v-col>
             </v-row>
@@ -67,6 +75,7 @@ export default {
     image: Object,
     side: String,
     icon: Object,
+    cta: Object,
     _key: String,
   },
   data() {
