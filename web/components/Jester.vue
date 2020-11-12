@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12">
         <v-theme-provider dark>
-          <v-container fill-height class="px-0">
+          <v-container fill-height class="px-5 px-md-0">
             <v-row class="blue-grey--text text--darken-3 mx-auto">
               <v-col
                 cols="12"
