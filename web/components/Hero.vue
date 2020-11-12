@@ -20,12 +20,7 @@
                   cols="10"
                   md="8"
                 >
-                  <h2
-                    :class="[
-                      $vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h2',
-                    ]"
-                    class="font-weight-light mb-3 mb-md-5"
-                  >
+                  <h2 class="font-weight-light mb-3 mb-md-5 text-h4 text-md-h2">
                     {{ heading }}
                   </h2>
 
