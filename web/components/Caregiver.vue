@@ -11,7 +11,7 @@
             <v-container fill-height>
               <v-row class="white--text mx-auto" justify="center">
                 <v-col class="white--text offset-md-1" xs="6">
-                  <h4 class="mb-5 text-h5 text-md-h4 pl-0">
+                  <h4 class="mb-0 text-h5 text-md-h4 pl-0">
                     {{ item.heading }}
                   </h4>
                   <SanityContent
