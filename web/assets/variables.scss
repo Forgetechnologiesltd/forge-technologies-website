@@ -103,7 +103,15 @@ $btn-text-transform: inherit;
 $btn-active-opacity: 0;
 $btn-focus-opacity: 0;
 $btn-hover-opacity: 0;
+$btn-transition: none;
+
 @import '~vuetify/src/styles/styles.sass';
+.v-btn:not(.v-btn--text):not(.v-btn--outlined) {
+  transition: 0.25s ease background;
+  &:hover {
+    background-color: #0288d1 !important;
+  }
+}
 .theme--light.v-application,
 .theme--light.v-card {
   color: #37474f !important;
