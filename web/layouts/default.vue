@@ -54,14 +54,13 @@
                 nuxt
                 :to="!item.submenu ? item.slug : `#${kebabCase(item.title)}`"
               >
-                {{ !item.submenu ? item.title : '' }}
+                <span v-if="!item.submenu">{{ item.title }}</span>
                 <v-menu offset-y v-if="item.submenu && item.submenu.length">
                   <template v-slot:activator="{ on, attrs }">
-                    <v-btn
-                      text
+                    <span
                       v-bind="attrs"
                       v-on="on"
-                      @click.native="
+                      @click="
                         () => {
                           if (item.submenu) {
                             tab = kebabCase(item.title)
@@ -73,7 +72,7 @@
                       "
                     >
                       {{ item.title }}
-                    </v-btn>
+                    </span>
                   </template>
                   <v-list
                     :dark="!$scrollHelper.isScrolled"
@@ -262,7 +261,7 @@ export default {
     subIsActive(input) {
       const paths = Array.isArray(input) ? input : [input]
       return paths.some((path) => {
-        return this.$route.path.indexOf(path) === 0 // current path starts with this path string
+        return this.$route.path.indexOf(path) === 0
       })
     },
     setActiveTab(item, to) {
@@ -281,7 +280,6 @@ export default {
       if (this.tab === undefined) {
         this.tab = tab
       }
-      console.log(this.tab)
     },
     kebabCase(string) {
       return kebabCase(string)
@@ -296,17 +294,19 @@ export default {
 //     background-color: rgba($color: #000000, $alpha: 0.4) !important;
 //   }
 // }
-// .theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active),
-// .theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-icon,
-// .theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-btn,
-// .theme--dark.v-tabs > .v-tabs-bar .v-tab--disabled {
-//   color: #fff;
-// }
+.theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active),
+.theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-icon,
+.theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-btn,
+.theme--dark.v-tabs > .v-tabs-bar .v-tab--disabled {
+  color: #fff;
+}
 
-.theme--dark.v-tabs .v-tab::before,
 .theme--dark.v-tabs .v-tab:hover::before,
 .theme--dark.v-tabs .v-tab--active::before,
 .theme--dark.v-tabs .v-tab--active:hover::before,
+.theme--light.v-tabs .v-tab:hover::before,
+.theme--light.v-tabs .v-tab--active::before,
+.theme--light.v-tabs .v-tab--active:hover::before,
 .v-tab .theme--light.v-btn:hover::before,
 .v-tab .theme--dark.v-btn:hover::before,
 .v-tab--active .theme--light.v-btn:hover::before,
