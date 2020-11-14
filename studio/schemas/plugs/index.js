@@ -4,6 +4,7 @@ export { default as magician } from "./magician";
 export { default as outlaw } from "./outlaw";
 export { default as outlawItem } from "./outlawItem";
 export { default as icon } from "./icon";
+export { default as socialIcon } from "./socialIcon";
 export { default as sage } from "./sage";
 export { default as ruler } from "./ruler";
 export { default as explorer } from "./explorer";

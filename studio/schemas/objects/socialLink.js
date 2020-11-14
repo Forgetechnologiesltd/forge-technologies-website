@@ -5,8 +5,8 @@ export default {
   fields: [
     {
       name: "icon",
-      type: "icon",
-      title: "Icon",
+      type: "socialIcon",
+      title: "Social Icon",
     },
     {
       name: "altText",

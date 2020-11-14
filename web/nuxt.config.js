@@ -104,6 +104,7 @@ export default async () => {
       projectId: 'pyzze960',
       dataset: 'production',
       useCdn: true,
+      minimal: true,
     },
     /*
      ** Set global info from sanity document
@@ -131,8 +132,14 @@ export default async () => {
       '@nuxtjs/vuetify',
       // https://sanity.nuxtjs.org/
       '@nuxtjs/sanity',
+      '@nuxtjs/fontawesome',
     ],
-
+    fontawesome: {
+      component: 'fa',
+      icons: {
+        brands: ['faLinkedinIn', 'faLinkedin', 'faTwitter', 'faTwitterSquare'],
+      },
+    },
     // Modules (https://go.nuxtjs.dev/config-modules)
     modules: [],
 
@@ -160,6 +167,9 @@ export default async () => {
             // success: colors.green.accent3
           },
         },
+      },
+      icons: {
+        iconfont: 'mdi', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
       },
     },
 

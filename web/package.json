@@ -11,15 +11,21 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/sanity": "^0.3.3",
     "@sanity/client": "^1.150.7",
     "@sanity/image-url": "^0.140.19",
     "consola": "^2.15.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.5",
+    "nuxt-fontawesome": "^0.4.0",
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
     "@nuxtjs/vuetify": "^1.11.2",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
