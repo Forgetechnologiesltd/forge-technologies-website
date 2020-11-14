@@ -45,6 +45,9 @@
               :dark="!$scrollHelper.isScrolled"
               background-color="transparent"
             >
+              <v-tabs-slider
+                :color="$scrollHelper.isScrolled ? 'primary' : 'white'"
+              ></v-tabs-slider>
               <v-tab
                 v-for="item in items"
                 :key="item._key"
