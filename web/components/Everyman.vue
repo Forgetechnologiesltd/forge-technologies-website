@@ -4,7 +4,7 @@
       centered
       v-model="tab"
       v-sticky
-      sticky-offset="{top: 100}"
+      sticky-offset="stickyOffset"
       sticky-z-index="4"
     >
       <v-tab v-for="tab in tabs" :key="tab._key" @click="scrollToBar()">{{
@@ -60,6 +60,7 @@ export default {
       tab: null,
       serializers,
       componentId: `everyman-${this._key}`,
+      stickyOffset: { top: this.$vuetify.breakpoint.mdAndUp ? 100 : 70 },
     }
   },
   methods: {
