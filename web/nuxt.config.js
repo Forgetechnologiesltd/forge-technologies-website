@@ -121,6 +121,7 @@ export default async () => {
       '~/plugins/imageHelper.js',
       '~/plugins/scrollHelper.js',
       '~/plugins/vuelidate.js',
+      '~/plugins/stickyDirective.client.js',
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)

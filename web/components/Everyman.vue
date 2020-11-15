@@ -1,10 +1,17 @@
 <template>
   <v-container fluid :id="componentId" tag="section">
-    <v-tabs centered>
+    <v-tabs
+      centered
+      v-model="tab"
+      v-sticky
+      sticky-offset="{top: 100}"
+      sticky-z-index="4"
+    >
       <v-tab v-for="tab in tabs" :key="tab._key" @click="scrollToBar()">{{
         tab.title
       }}</v-tab>
-
+    </v-tabs>
+    <v-tabs-items v-model="tab">
       <v-tab-item v-for="tab in tabs" :key="tab._key">
         <v-container fluid class="pa-0">
           <v-row>
@@ -14,7 +21,7 @@
           </v-row>
         </v-container>
       </v-tab-item>
-    </v-tabs>
+    </v-tabs-items>
   </v-container>
 </template>
 
@@ -49,7 +56,11 @@ export default {
     _key: String,
   },
   data() {
-    return { serializers, componentId: `everyman-${this._key}` }
+    return {
+      tab: null,
+      serializers,
+      componentId: `everyman-${this._key}`,
+    }
   },
   methods: {
     scrollToBar() {
