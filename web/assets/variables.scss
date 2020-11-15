@@ -104,6 +104,7 @@ $btn-active-opacity: 0;
 $btn-focus-opacity: 0;
 $btn-hover-opacity: 0;
 $btn-transition: none;
+$text-field-label-top: 3px;
 
 @import '~vuetify/src/styles/styles.sass';
 .v-btn:not(.v-btn--text):not(.v-btn--outlined):not(.v-btn--icon) {
@@ -125,12 +126,17 @@ $btn-transition: none;
 
 label[style].theme--light.v-label {
   font-size: 10px;
+  &.v-label--active {
+    color: #fff;
+    font-size: 12px;
+  }
   left: 10px !important;
 }
 .v-text-field {
   font-size: 12px;
 }
-.v-input input {
+.v-input input,
+.v-input.v-textarea textarea {
   padding-left: 10px;
 }
 .v-avatar.rounded-50 .v-image {
