@@ -13,6 +13,16 @@ export default {
       type: "simpleBlockContent",
       title: "Text",
     },
+    {
+      name: "successMessage",
+      type: "string",
+      title: "Success message",
+    },
+    {
+      name: "errorMessage",
+      type: "string",
+      title: "Error message",
+    },
   ],
   preview: {
     select: {
