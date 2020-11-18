@@ -66,7 +66,7 @@ const serializers = {
 export default {
   async fetch() {
     const result = await this.$sanity.fetch(query, {
-      slug: this.$route.params.slug,
+      slug: 'news-and-views',
     })
     this.page = result.page
   },

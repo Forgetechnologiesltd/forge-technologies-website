@@ -6,18 +6,26 @@
   >
     <v-row>
       <v-col cols="12">
-        <SanityContent :blocks="block" />
+        <SanityContent :blocks="block" :serializers="serializers" />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import MainImage from '~/components/MainImage'
+
+const serializers = { types: { mainImage: MainImage } }
 export default {
   name: 'Wildcard',
   props: {
-    block: Object,
+    block: [Object, Array],
     _key: String,
+  },
+  data() {
+    return {
+      serializers,
+    }
   },
 }
 </script>

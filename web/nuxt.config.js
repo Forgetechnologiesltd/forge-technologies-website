@@ -183,7 +183,9 @@ export default async () => {
         return sanityClient.fetch(routesQuery).then((res) => {
           return [
             ...res.pages.map((item) => `/${item.slug.current}`),
-            ...res.blogPosts.map((item) => `/blog/${item.slug.current}`),
+            ...res.blogPosts.map(
+              (item) => `/news-and-views/${item.slug.current}`
+            ),
           ]
         })
       },

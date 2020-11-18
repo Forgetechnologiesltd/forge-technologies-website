@@ -43,6 +43,7 @@ export default {
         { type: "company" },
         { type: "contact" },
         { type: "wildcard" },
+        { type: "storyteller" },
       ],
     },
     {
