@@ -52,7 +52,9 @@
                 v-for="item in items"
                 :key="item._key"
                 nuxt
-                :to="!item.submenu ? item.slug : `#${kebabCase(item.title)}`"
+                :to="
+                  !item.submenu ? `/${item.slug}` : `#${kebabCase(item.title)}`
+                "
               >
                 <span v-if="!item.submenu">{{ item.title }}</span>
                 <v-menu offset-y v-if="item.submenu && item.submenu.length">
@@ -110,7 +112,7 @@
         <v-list-item
           v-for="item in items"
           :key="item._key"
-          :to="!item.noLink ? item.slug : '#'"
+          :to="!item.noLink ? `/${item.slug}` : '#'"
           router
           exact
         >
@@ -120,7 +122,7 @@
               <v-list-item
                 v-for="subitem in item.submenu"
                 :key="subitem._key"
-                :to="!subitem.noLink ? subitem.slug : '#'"
+                :to="!subitem.noLink ? `/${subitem.slug}` : '#'"
                 router
                 exact
               >
@@ -267,9 +269,9 @@ export default {
     setActiveTab(item, to) {
       const slugs = []
       const tab = kebabCase(item.title)
-      this.$router.push(to)
+      this.$router.push(`/${to}`)
       item.submenu.map((subitem) => {
-        slugs.push(subitem.slug)
+        slugs.push(`/${subitem.slug}`)
       })
       if (this.subIsActive(slugs)) {
         this.tab = tab
