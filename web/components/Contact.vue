@@ -118,7 +118,7 @@
       {{ success }}
 
       <template v-slot:action="{ attrs }">
-        <v-btn color="white" text v-bind="attrs" @click="success = false">
+        <v-btn color="white" text v-bind="attrs" @click="isSuccess = false">
           Close
         </v-btn>
       </template>
@@ -126,7 +126,20 @@
     <v-snackbar v-model="isError" color="error" timeout="10000">
       {{ error }}
       <template v-slot:action="{ attrs }">
-        <v-btn color="white" text v-bind="attrs" @click="error = false">
+        <v-btn color="white" text v-bind="attrs" @click="isError = false">
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
+    <v-snackbar v-model="isValidationError" color="error" timeout="10000">
+      Please fill in all required fields.
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="white"
+          text
+          v-bind="attrs"
+          @click="isValidationError = false"
+        >
           Close
         </v-btn>
       </template>
@@ -162,6 +175,7 @@ export default {
       message: '',
       isSuccess: false,
       isError: false,
+      isValidationError: false,
       submitStatus: null,
       success: this.successMessage
         ? this.successMessage
@@ -222,7 +236,9 @@ export default {
       this.$v.$touch()
       if (this.$v.$invalid) {
         this.submitStatus = 'error'
+        this.isValidationError = true
       } else {
+        this.isValidationError = false
         await fetch(FORMSPARK_ACTION_URL, {
           method: 'POST',
           headers: {
