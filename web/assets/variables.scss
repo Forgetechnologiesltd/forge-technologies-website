@@ -107,7 +107,7 @@ $btn-transition: none;
 $text-field-label-top: 3px;
 
 @import '~vuetify/src/styles/styles.sass';
-.v-btn:not(.v-btn--text):not(.v-btn--outlined):not(.v-btn--icon) {
+.v-btn:not(.v-btn--text):not(.v-btn--outlined):not(.v-btn--icon):not(.primary--text) {
   transition: 0.25s ease background;
   &:hover {
     background-color: #0288d1 !important;
@@ -142,4 +142,7 @@ label[style].theme--light.v-label {
 }
 .v-avatar.rounded-50 .v-image {
   border-radius: 50%;
+}
+.cookieControl .v-snack__wrapper {
+  max-width: 1080px;
 }

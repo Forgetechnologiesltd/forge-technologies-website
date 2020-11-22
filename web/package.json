@@ -13,6 +13,7 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/sanity": "^0.3.3",
     "@sanity/client": "^1.150.7",
     "@sanity/image-url": "^0.140.19",
@@ -20,6 +21,7 @@
     "consola": "^2.15.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.5",
+    "nuxt-cookie-control": "^1.9.6",
     "nuxt-fontawesome": "^0.4.0",
     "vue-sticky-directive": "0.0.10",
     "vuelidate": "^0.7.6"

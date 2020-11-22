@@ -12,10 +12,9 @@ const routesQuery = groq`
   }
 `
 
-export default async () => {
+export default async (ctx) => {
   const siteSettings = await sanityClient.fetch('*[_type == "siteSettings"][0]')
-
-  return {
+  const nuxtConfig = {
     // Target (https://go.nuxtjs.dev/config-target)
     target: 'server',
 
@@ -134,7 +133,12 @@ export default async () => {
       // https://sanity.nuxtjs.org/
       '@nuxtjs/sanity',
       '@nuxtjs/fontawesome',
+      '@nuxtjs/google-analytics',
     ],
+    googleAnalytics: {
+      id: 'G-6J15Y6ZYJZ',
+      disabled: true,
+    },
     fontawesome: {
       component: 'fa',
       icons: {
@@ -142,7 +146,66 @@ export default async () => {
       },
     },
     // Modules (https://go.nuxtjs.dev/config-modules)
-    modules: [],
+    modules: [
+      [
+        'nuxt-cookie-control',
+        {
+          // component: '~/components/CookieControl',
+          colors: false,
+          text: {
+            barTitle: 'Cookie policy',
+            barDescription:
+              "<p>Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site</> <p>A cookie is a small file of letters and numbers that we store on your browser or the hard drive of your computer if you agree. Cookies contain information that is transferred to your computer's hard drive.</p>",
+            acceptAll: 'Accept all',
+            declineAll: 'Delete all',
+            manageCookies: 'Manage cookies',
+            unsaved: 'You have unsaved settings',
+            close: 'Close',
+            save: 'Save',
+            necessary: 'Strictly necessary cookies.',
+            optional: 'Optional cookies',
+            functional: 'Functional cookies',
+            blockedIframe: 'To see this, please enable functional cookies',
+            here: 'here',
+          },
+
+          cookies: {
+            necessary: [
+              {
+                name: 'Default Cookies',
+                description:
+                  ' These are cookies that are required for the operation of our website. They include, for example, cookies that enable you to control whether you accept using other cookies.',
+                cookies: [
+                  'cookie_control_consent',
+                  'cookie_control_enabled_cookies',
+                ],
+              },
+            ],
+            optional: [
+              {
+                name: 'Google Analitycs',
+
+                identifier: 'ga',
+
+                description:
+                  'These allow us to recognise and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users are finding what they are looking for easily.',
+
+                initialState: true,
+                src: 'https://www.googletagmanager.com/gtag/js?id=G-6J15Y6ZYJZ',
+                async: true,
+                cookies: ['_ga', '_gat', '_gid'],
+                accepted: () => {
+                  console.log('accepted')
+                },
+                declined: () => {
+                  console.log('declined')
+                },
+              },
+            ],
+          },
+        },
+      ],
+    ],
 
     // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
     vuetify: {
@@ -158,7 +221,7 @@ export default async () => {
             secondary: colors.lightBlue.darken2,
             accent: colors.lightBlue.darken4,
             error: '#b71c1c',
-            text: '#37474f',
+            text: colors.blueGrey.darken3,
             // primary: colors.blue.darken2,
             // accent: colors.grey.darken3,
             // secondary: colors.amber.darken3,
@@ -214,4 +277,6 @@ export default async () => {
       },
     },
   }
+
+  return nuxtConfig
 }

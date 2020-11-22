@@ -193,12 +193,14 @@
         </v-card-text>
       </v-card>
     </v-footer>
+    <CookieControl />
   </v-app>
 </template>
 
 <script>
 import { groq } from '@nuxtjs/sanity'
 import kebabCase from 'lodash/kebabCase'
+
 const query = groq`*[_type == "navigationMenu"][0].items {
   ...,
   "slug": landingPageRoute->slug.current,
@@ -232,7 +234,6 @@ export default {
     this.footerMenus = footerMenus
     this.footerText = siteSettings.footerText
   },
-
   data() {
     return {
       tab: null,
