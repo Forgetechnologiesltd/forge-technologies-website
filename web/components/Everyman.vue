@@ -1,16 +1,30 @@
 <template>
-  <v-container fluid :id="componentId" tag="section">
-    <v-tabs
-      centered
-      v-model="tab"
+  <v-container no-gutters fluid :id="componentId" tag="section" class="px-0">
+    <v-sheet
+      color="primary"
+      class="pb-2"
       v-sticky
       sticky-offset="stickyOffset"
       sticky-z-index="4"
     >
-      <v-tab v-for="tab in tabs" :key="tab._key" @click="scrollToBar()">{{
-        tab.title
-      }}</v-tab>
-    </v-tabs>
+      <v-tabs
+        centered
+        v-model="tab"
+        background-color="primary"
+        slider-size="5"
+        dark
+        class="px-0"
+      >
+        <v-tabs-slider></v-tabs-slider>
+        <v-tab
+          class="text-subtitle-1 white--text"
+          v-for="tab in tabs"
+          :key="tab._key"
+          @click="scrollToBar()"
+          >{{ tab.title }}</v-tab
+        >
+      </v-tabs>
+    </v-sheet>
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="tab in tabs" :key="tab._key">
         <v-container fluid class="pa-0">
