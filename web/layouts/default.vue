@@ -142,7 +142,7 @@
     </v-main>
 
     <v-footer padless class="mt-0">
-      <v-card class="flex" flat tile>
+      <v-card class="flex" flat tile dark color="light-blue darken-4">
         <v-card-title>
           <v-container>
             <v-row>
@@ -150,7 +150,7 @@
                 <NuxtLink to="/" class="d-block">
                   <v-img
                     contain
-                    src="/forge-logo-inline.svg"
+                    src="/forge-logo-inline-white.svg"
                     max-width="200"
                   ></v-img>
                 </NuxtLink>
@@ -162,10 +162,12 @@
                 order-md="2"
                 md="2"
               >
-                <v-list dense class="pt-0">
-                  <v-subheader class="pt-0 pl-0 text-body-1">{{
-                    menu.title
-                  }}</v-subheader>
+                <v-list dense class="pt-0 light-blue darken-4 footer-menu">
+                  <v-subheader
+                    class="pt-0 pl-0 text-body-1 font-weight-bold white--text"
+                    dark
+                    >{{ menu.title }}</v-subheader
+                  >
                   <v-list-item
                     v-for="(item, i) in menu.items"
                     :key="i"
@@ -173,9 +175,9 @@
                     router
                     exact
                     active-class="active"
-                    class="primary--text pl-0"
+                    class="white--text pl-0"
                   >
-                    <span class="text-body-1 primary--text">{{
+                    <span class="text-body-2 white--text">{{
                       item.title
                     }}</span>
                   </v-list-item>
@@ -186,10 +188,20 @@
         </v-card-title>
 
         <v-card-text
-          class="py-1 white--text light-blue darken-1 d-flex justify-space-between"
-        >
-          <span>&copy; Forge Technologies {{ new Date().getFullYear() }}</span>
-          <span>{{ footerText }}</span>
+          class="py-1 white--text light-blue darken-4 d-flex justify-space-between"
+          ><v-container>
+            <v-row>
+              <v-col>
+                <v-card class="d-flex light-blue darken-4" flat>
+                  <span
+                    >&copy; Forge Technologies
+                    {{ new Date().getFullYear() }}</span
+                  >
+                  <span class="ml-auto" v-html="footerText"></span>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
         </v-card-text>
       </v-card>
     </v-footer>
