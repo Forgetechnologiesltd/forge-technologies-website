@@ -224,26 +224,25 @@ const query = groq`*[_type == "navigationMenu"][0].items {
       "slug": landingPageRoute->slug.current
     }
 }`
-const footerMenusQuery = groq`*[_type == "footerMenu"] {
-  _id,
-  title,
-  items[] {
-    title,
-    "slug": landingPageRoute->slug.current,
-  }
-}`
 const siteSettingsQuery = groq`*[_type == "siteSettings"][0] {
   ...,
-  "footerText": footerText[0].children[0].text
+  "footerText": footerText[0].children[0].text,
+  "footerMenus": footerNav[]-> {
+    _id,
+    title,
+    items[] {
+      title,
+      "slug": landingPageRoute->slug.current,
+    }
+  }
 }`
 
 export default {
   async fetch() {
     const items = await this.$sanity.fetch(query)
-    const footerMenus = await this.$sanity.fetch(footerMenusQuery)
     const siteSettings = await this.$sanity.fetch(siteSettingsQuery)
     this.items = items
-    this.footerMenus = footerMenus
+    this.footerMenus = siteSettings.footerMenus
     this.footerText = siteSettings.footerText
   },
   data() {
