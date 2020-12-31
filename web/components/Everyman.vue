@@ -1,5 +1,11 @@
 <template>
-  <v-container no-gutters fluid :id="componentId" tag="section" class="px-0">
+  <v-container
+    no-gutters
+    fluid
+    :id="componentId"
+    tag="section"
+    class="px-0 overflow--hidden"
+  >
     <v-sheet
       color="primary"
       class="pb-2"

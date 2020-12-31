@@ -1,5 +1,10 @@
 <template>
-  <v-container fluid class="pa-0 mb-7" :id="`jester-${_key}`" tag="section">
+  <v-container
+    fluid
+    class="pa-0 mb-7 overflow--hidden"
+    :id="`jester-${_key}`"
+    tag="section"
+  >
     <v-row>
       <v-col cols="12">
         <v-theme-provider dark>
