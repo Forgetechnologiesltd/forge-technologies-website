@@ -149,3 +149,8 @@ label[style].theme--light.v-label {
 .footer-menu .v-list--dense .v-list-item {
   min-height: 30px;
 }
+@media (max-width: 500px) {
+  .cookieControl .v-snack__wrapper {
+    display: block;
+  }
+}
