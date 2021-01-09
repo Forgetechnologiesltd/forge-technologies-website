@@ -24,6 +24,7 @@ import Storyteller from '~/components/Storyteller'
 const ctaQuery = `cta {
         title,
         kind,
+        ...,
         "slug": landingPageRoute->slug.current
       }`
 
@@ -35,6 +36,10 @@ const query = groq`*[_type == "route" && slug.current == $slug][0]{
       ...,
       ${ctaQuery},
       caregiverItems[]{
+        ...,
+        ${ctaQuery},
+      },
+      explorerItems[]{
         ...,
         ${ctaQuery},
       }

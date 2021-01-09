@@ -36,6 +36,10 @@ const query = groq`*[_type == "route" && slug.current == "homepage"][0]{
       caregiverItems[]{
         ...,
         ${ctaQuery},
+      },
+      explorerItems[]{
+        ...,
+        ${ctaQuery},
       }
     }
   }
