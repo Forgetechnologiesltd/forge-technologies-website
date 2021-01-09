@@ -22,7 +22,7 @@
             class="primary my-md-n16 px-md-8 d-md-flex align-md-self-top"
             flat
           >
-            <v-form @submit.prevent="submit">
+            <v-form @submit.prevent="submit" style="min-width: 100%">
               <v-container class="pt-md-8">
                 <v-row justify="space-between">
                   <v-col cols="12" md="6" class="my-0 py-0">
