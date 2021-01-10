@@ -194,7 +194,7 @@
               <v-col>
                 <v-card class="d-flex light-blue darken-4" flat>
                   <span
-                    >&copy; Forge Technologies
+                    >&copy; Forge Technologies Ltd.
                     {{ new Date().getFullYear() }}</span
                   >
                   <span class="ml-auto" v-html="footerText"></span>
