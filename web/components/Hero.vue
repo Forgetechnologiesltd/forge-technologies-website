@@ -20,9 +20,10 @@
                   cols="10"
                   md="8"
                 >
-                  <h2 class="font-weight-light mb-3 mb-md-5 text-h4 text-md-h2">
-                    {{ heading }}
-                  </h2>
+                  <h2
+                    v-html="heading"
+                    class="font-weight-light mb-3 mb-md-5 text-h4 text-md-h2"
+                  ></h2>
 
                   <SanityContent
                     class="col-12 col-md-8 px-0 d-flex"
