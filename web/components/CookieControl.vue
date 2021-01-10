@@ -9,6 +9,7 @@
         max-width="100%"
         color="primary"
         timeout="-1"
+        :centered="$vuetify.breakpoint.mdAndDown"
       >
         <h3 v-text="cookies.text.barTitle" />
         <div v-html="cookies.text.barDescription" />
