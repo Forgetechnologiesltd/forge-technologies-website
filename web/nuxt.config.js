@@ -28,6 +28,7 @@ export default async (ctx) => {
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: '' },
+        { hid: 'robots', name: 'robots', content: 'noindex' },
         {
           hid: 'og:title',
           property: 'og:title',
@@ -94,6 +95,10 @@ export default async (ctx) => {
         { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' },
       ],
     },
+    robots: {
+      UserAgent: '*',
+      Disallow: '/',
+    },
     // privateRuntimeConfig: {
     //   sanity: {
     //     token: 'sknaKCAsJ4llyA1P7Rytef0y6ZIQJGrXlH3HVTWmZsZVKzZuMX12d5IWEnKLeLJOf7CsB1MaxHX8RMVgIo1R3jawpG91xItzVCH7x2taKWkiffO2EC04gVvg9ekY6umhLP54VvNstNH6jW9Py6UbiyYCo7PBrIAkLDX5aRQWCGI4AkfLWZvd',
@@ -134,6 +139,7 @@ export default async (ctx) => {
       '@nuxtjs/sanity',
       '@nuxtjs/fontawesome',
       '@nuxtjs/google-analytics',
+      '@nuxtjs/robots',
     ],
     googleAnalytics: {
       id: 'G-6J15Y6ZYJZ',
