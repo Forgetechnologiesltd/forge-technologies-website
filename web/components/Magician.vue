@@ -11,7 +11,7 @@
         <v-img
           :min-height="'calc(50vh)'"
           :max-height="'calc(50vh)'"
-          :src="$imageHelper(mediumSizeImage).url()"
+          :src="$imageHelper(mediumSizeImage).auto('format').url()"
         >
         </v-img>
       </v-col>

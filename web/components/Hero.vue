@@ -5,7 +5,7 @@
         <v-img
           :min-height="'calc(60vh)'"
           :max-height="'calc(60vh)'"
-          :src="$imageHelper(backgroundImage).url()"
+          :src="$imageHelper(backgroundImage).auto('format').url()"
         >
           <v-theme-provider dark>
             <v-container fill-height>

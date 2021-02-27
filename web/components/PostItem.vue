@@ -5,7 +5,7 @@
       class="d-flex align-items-stretch flex-column align-content-space-between"
     >
       <v-img
-        :src="$imageHelper(mainImage).url()"
+        :src="$imageHelper(mainImage).auto('format').url()"
         height="200px"
         max-height="200"
       ></v-img>
