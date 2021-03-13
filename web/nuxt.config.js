@@ -142,8 +142,7 @@ export default async (ctx) => {
       '@nuxtjs/robots',
     ],
     googleAnalytics: {
-      id: 'G-6J15Y6ZYJZ',
-      disabled: true,
+      id: 'G-L2K49CSEC9',
     },
     fontawesome: {
       component: 'fa',
