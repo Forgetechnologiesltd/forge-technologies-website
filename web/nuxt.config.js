@@ -140,6 +140,7 @@ export default async (ctx) => {
       '@nuxtjs/fontawesome',
       '@nuxtjs/google-analytics',
       '@nuxtjs/robots',
+      '@nuxtjs/sitemap',
     ],
     googleAnalytics: {
       id: 'G-L2K49CSEC9',
@@ -149,6 +150,10 @@ export default async (ctx) => {
       icons: {
         brands: ['faLinkedinIn', 'faLinkedin', 'faTwitter', 'faTwitterSquare'],
       },
+    },
+    sitemap: {
+      hostname: 'https://forge-technologies.com/',
+      gzip: true,
     },
     // Modules (https://go.nuxtjs.dev/config-modules)
     modules: [
