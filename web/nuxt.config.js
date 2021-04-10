@@ -144,6 +144,7 @@ export default async (ctx) => {
     ],
     googleAnalytics: {
       id: 'G-L2K49CSEC9',
+      dev: false,
     },
     fontawesome: {
       component: 'fa',
