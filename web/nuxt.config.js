@@ -28,7 +28,7 @@ export default async (ctx) => {
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: '' },
-        { hid: 'robots', name: 'robots', content: 'noindex' },
+        { hid: 'robots', name: 'robots', content: 'index, follow' },
         {
           hid: 'og:title',
           property: 'og:title',
@@ -97,7 +97,7 @@ export default async (ctx) => {
     },
     robots: {
       UserAgent: '*',
-      Disallow: '/',
+      Allow: '/',
     },
     // privateRuntimeConfig: {
     //   sanity: {
