@@ -143,7 +143,7 @@ export default async (ctx) => {
       '@nuxtjs/sitemap',
     ],
     googleAnalytics: {
-      id: 'G-L2K49CSEC9',
+      id: 'G-XR5Z81ZEQD',
       dev: false,
     },
     fontawesome: {
@@ -202,7 +202,7 @@ export default async (ctx) => {
                   'These allow us to recognise and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users are finding what they are looking for easily.',
 
                 initialState: true,
-                src: 'https://www.googletagmanager.com/gtag/js?id=G-L2K49CSEC9',
+                src: 'https://www.googletagmanager.com/gtag/js?id=G-XR5Z81ZEQD',
                 async: true,
                 cookies: ['_ga', '_gat', '_gid'],
                 accepted: () => {
