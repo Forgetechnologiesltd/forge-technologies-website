@@ -132,6 +132,7 @@
 </template>
 
 <script>
+import { bootstrap } from 'vue-gtag'
 export default {
   name: 'CookieControl',
   props: {
@@ -210,10 +211,8 @@ export default {
     setGa() {
       const enabledCookies = this.cookies.get('cookie_control_enabled_cookies')
       if (enabledCookies === 'ga') {
-        this.$ga.enable()
-        this.$ga.page(this.$router)
-      } else {
-        this.$ga.disable()
+        bootstrap().then((gtag) => {})
+        this.$gtag.pageview({ page_path: this.$route.path })
       }
     },
 
@@ -294,7 +293,6 @@ export default {
       !this.cookies.get('cookie_control_consent') ||
       this.cookies.get('cookie_control_consent').length === 0
     ) {
-      this.$ga.disable()
       this.optionalCookies.forEach((c) => {
         if (c.initialState === true) {
           this.cookies.enabledList.push(

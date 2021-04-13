@@ -126,6 +126,7 @@ export default async (ctx) => {
       '~/plugins/scrollHelper.js',
       '~/plugins/vuelidate.js',
       '~/plugins/stickyDirective.client.js',
+      '~/plugins/gtag.js',
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -138,14 +139,9 @@ export default async (ctx) => {
       // https://sanity.nuxtjs.org/
       '@nuxtjs/sanity',
       '@nuxtjs/fontawesome',
-      '@nuxtjs/google-analytics',
       '@nuxtjs/robots',
       '@nuxtjs/sitemap',
     ],
-    googleAnalytics: {
-      id: 'G-XR5Z81ZEQD',
-      dev: false,
-    },
     fontawesome: {
       component: 'fa',
       icons: {
@@ -200,17 +196,8 @@ export default async (ctx) => {
 
                 description:
                   'These allow us to recognise and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users are finding what they are looking for easily.',
-
-                initialState: true,
-                src: 'https://www.googletagmanager.com/gtag/js?id=G-XR5Z81ZEQD',
                 async: true,
                 cookies: ['_ga', '_gat', '_gid'],
-                accepted: () => {
-                  console.log('accepted')
-                },
-                declined: () => {
-                  console.log('declined')
-                },
               },
             ],
           },
