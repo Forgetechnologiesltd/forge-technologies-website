@@ -58,8 +58,8 @@ const postProjection = `{
     "authors": authors[].author->
   }`
 
-const postsQuery = groq`*[_type == "post" && defined(slug) && publishedAt < now()] ${postProjection}`
-const postsByCatQuery = groq`*[_type == "post" && defined(slug) && publishedAt < now() && $catId in categories[]._ref] ${postProjection}`
+const postsQuery = groq`*[_type == "post" && defined(slug) && publishedAt < now()] ${postProjection} | order(dateTime(publishedAt) desc)`
+const postsByCatQuery = groq`*[_type == "post" && defined(slug) && publishedAt < now() && $catId in categories[]._ref] ${postProjection} | order(dateTime(publishedAt) desc)`
 const categoriesQuery = groq`*[_type == "category" ]`
 
 const serializers = {
