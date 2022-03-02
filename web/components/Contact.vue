@@ -179,10 +179,10 @@ export default {
       submitStatus: null,
       success: this.successMessage
         ? this.successMessage
-        : "Thanks for getting in touch. We'll get back to you as asoon as possible",
+        : "Thanks for getting in touch. We'll get back to you as soon as possible",
       error: this.errorMessage
         ? this.errorMessage
-        : "Thanks for getting in touch. There's been a problem with your submision. Please try again",
+        : "Thanks for getting in touch. There's been a problem with your submission. Please try again",
     }
   },
   validations: {
