@@ -3,6 +3,7 @@
     <v-card
       outlined
       class="d-flex align-items-stretch flex-column align-content-space-between"
+      :to="`/news-and-views/${slug.current}`"
     >
       <v-img
         :src="$imageHelper(mainImage).auto('format').url()"
@@ -29,7 +30,6 @@
           color="primary"
           text
           nuxt
-          :to="`/news-and-views/${slug.current}`"
         >
           Read more
         </v-btn>
