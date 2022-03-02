@@ -73,7 +73,7 @@
                     <v-text-field
                       hide-details="auto"
                       color="white"
-                      label="number"
+                      label="Number"
                       v-model="number"
                       background-color="white"
                       name="number"
