@@ -4,7 +4,7 @@
     :id="`storyteller-${_key}`"
     tag="section"
   >
-    <h3 class="text-h6 mb-4">Other News you might be interested in...</h3>
+    <h3 class="text-h3 mb-4">More News</h3>
     <SanityContent :blocks="posts" :serializers="serializers" class="row" />
   </v-container>
 </template>
