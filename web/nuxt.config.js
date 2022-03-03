@@ -255,7 +255,9 @@ export default async (ctx) => {
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
-      extractCSS: true,
+      extractCSS: {
+        ignoreOrder: true
+      },
       optimization: {
         splitChunks: {
           cacheGroups: {

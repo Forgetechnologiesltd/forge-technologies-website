@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-img {
-  max-width: 100%;
+.v-card__title.pt-1 {
+  word-break: normal;
 }
 </style>
