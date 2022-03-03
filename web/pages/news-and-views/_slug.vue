@@ -23,11 +23,11 @@
                     >
                       {{ category.title }}
                     </span>
-                    <h2
+                    <h1
                       class="font-weight-light mb-3 mb-md-5 text-h4 text-md-h2"
                     >
                       {{ post.title }}
-                    </h2>
+                    </h1>
                     <p v-if="post.body">
                       <span
                         >{{
@@ -205,15 +205,7 @@ export default {
   line-height: 12px;
   vertical-align: middle;
 }
-h3 {
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 3.125rem;
-  letter-spacing: normal;
-  text-transform: false;
-  margin-bottom: 20px;
-}
-h4 {
+h2 {
   font-size: 34px;
   font-weight: 400;
   line-height: 2.5rem;
@@ -221,11 +213,23 @@ h4 {
   text-transform: false;
   margin-bottom: 16px;
 }
-h5 {
+h3 {
   font-size: 24px;
   font-weight: 400;
   line-height: 2rem;
   letter-spacing: normal;
   text-transform: false;
+  margin-bottom: 10px;
+}
+h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 2rem;
+  letter-spacing: 0.0125em;
+  text-transform: false;
+  margin-bottom: 5px;
+}
+ol {
+  margin-bottom: 10px;
 }
 </style>
