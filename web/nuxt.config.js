@@ -137,7 +137,7 @@ export default async (ctx) => {
       // https://go.nuxtjs.dev/vuetify
       '@nuxtjs/vuetify',
       // https://sanity.nuxtjs.org/
-      '@nuxtjs/sanity',
+      '@nuxtjs/sanity/module',
       '@nuxtjs/fontawesome',
       '@nuxtjs/robots',
       '@nuxtjs/sitemap',
