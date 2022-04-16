@@ -161,6 +161,14 @@ export default {
       return this.cookies.cookies.optional
     },
   },
+  watch: {
+      $route() {
+        const enabledCookies = this.cookies.get('cookie_control_enabled_cookies')
+      if (enabledCookies === 'ga') {
+        this.$gtag.pageview({ page_path: this.$route.path })
+      }
+    }
+  },
 
   methods: {
     toogleCookie(cookie) {
