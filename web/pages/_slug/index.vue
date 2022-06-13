@@ -32,6 +32,7 @@ const query = groq`*[_type == "route" && slug.current == $slug][0]{
   page-> {
     title,
     slug,
+    openGraph,
     content[] {
       ...,
       ${ctaQuery},
@@ -73,11 +74,18 @@ export default {
     const result = await this.$sanity.fetch(query, {
       slug: this.$route.params.slug,
     })
+    console.log(result)
     this.page = result.page
+    //console.log("return --- s " + this.page);
   },
   data: () => ({ serializers, page: {} }),
   head() {
+    console.log('------------')
+    console.log(this.page)
     if (!this || !this.page || !this.page.openGraph) {
+      //console.log("this --- " + this);
+      console.log(this.page);
+      console.log(this.page.openGraph);
       return
     }
     return {

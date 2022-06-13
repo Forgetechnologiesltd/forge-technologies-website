@@ -159,43 +159,42 @@ export default {
   },
   data: () => ({ serializers, post: {} }),
   head() {
-    // if (!this || !this.page || !this.page.openGraph) {
-    //   return
-    // }
-    // return {
-    //   title: this.page.openGraph.title,
-    //   meta: [
-    //     {
-    //       hid: 'description',
-    //       name: 'description',
-    //       content: this.page.openGraph.description,
-    //     },
-    //     {
-    //       hid: 'keywords',
-    //       name: 'keywords',
-    //       content: this.page.openGraph.keywords
-    //         ? this.page.openGraph.keywords.join(',')
-    //         : '',
-    //     },
-    //     {
-    //       hid: 'og:title',
-    //       property: 'og:title',
-    //       content: this.page.openGraph.title,
-    //     },
-    //     {
-    //       hid: 'og:description',
-    //       property: 'og:description',
-    //       content: this.page.openGraph.description,
-    //     },
-    //     {
-    //       hid: 'og:image',
-    //       property: 'og:image',
-    //       content: this.page.openGraph.image
-    //         ? this.$imageHelper(this.page.openGraph.image).url()
-    //         : '',
-    //     },
-    //   ],
-    // }
+     if (!this || !this.post) {
+       return
+     }
+     return {
+       title: this.post.title,
+       meta: [
+         {
+           hid: 'description',
+           name: 'description',
+           content: this.post.caption,
+         },
+         
+         {
+           hid: 'og:title',
+           property: 'og:title',
+           content: this.post.title,
+         },
+         {
+           hid: 'og:description',
+           property: 'og:description',
+           content: this.post.caption,
+         },
+         {
+           hid: 'og:type',
+           property: 'og:type',
+           content: 'article',
+         },
+         {
+           hid: 'og:image',
+           property: 'og:image',
+           content: this.$imageHelper(this.post.mainImage).url()
+             ? this.$imageHelper(this.post.mainImage).url()
+             : '',
+         },
+       ],
+     }
   },
 }
 </script>
