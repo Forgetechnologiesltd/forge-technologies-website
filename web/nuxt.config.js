@@ -66,6 +66,12 @@ export default async (ctx) => {
           href: process.env.URL,
         },
       ],
+      script:[
+        {
+          type:'text-javascript',
+          innerHTML:` document.write('<iframe src="https://app.overloop.com/companies/6b4b45c8-7666-44d0-a6b4-638871ab99b1/tracker?u='+encodeURI(document.location.href)+'&t='+encodeURI(document.title)+'" width="0" height="0" style="display:none;"></iframe>')`,
+        }
+      ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
       link: [
         {
