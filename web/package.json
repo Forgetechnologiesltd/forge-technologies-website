@@ -13,6 +13,7 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sanity": "0.10.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@sanity/client": "^1.150.7",
