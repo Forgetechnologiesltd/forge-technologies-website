@@ -166,28 +166,28 @@ export default {
        title: this.post.title,
        meta: [
          {
-           vmid: 'description',
+           hid: 'description',
            name: 'description',
            content: this.post.caption,
          },
          
          {
-           vmid: 'og:title',
+           hid: 'og:title',
            property: 'og:title',
            content: this.post.title,
          },
          {
-           vmid: 'og:description',
+           hid: 'og:description',
            property: 'og:description',
            content: this.post.caption,
          },
          {
-           vmid: 'og:type',
+           hid: 'og:type',
            property: 'og:type',
            content: 'article',
          },
          {
-           vmid: 'og:image',
+           hid: 'og:image',
            property: 'og:image',
            content: this.$imageHelper(this.post.mainImage).url()
              ? this.$imageHelper(this.post.mainImage).url()
