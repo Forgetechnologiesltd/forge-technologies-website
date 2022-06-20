@@ -1,5 +1,5 @@
 <template>
-  <v-container :id="`explorer-${_key}`" tag="section" fluid class="px-0">
+  <v-container :id="`explorer-${_key}`" tag="section" fluid class="px-0 pt-0">
     <v-carousel cycle hide-delimiter-background>
       <v-carousel-item
         v-for="item in explorerItems"
@@ -8,11 +8,11 @@
       >
         <v-row class="fill-height" align="center" justify="center">
           <v-col class="col-12 col-md-8 px-0 mx-auto justify-center">
-            <h3 class="text-h5 text-md-h3 mx-auto justify-center text-center">
+            <h3 class="text-h5 text-md-h3 mx-auto justify-center text-center white--text font-bold">
               {{ item.heading }}
             </h3>
             <SanityContent
-              class="text-body-2 col-10 col-md-5 px-0 text-center mx-auto justify-center"
+              class="text-body-5 col-10 col-md-5 px-0 text-center mx-auto justify-center white--text"
               :blocks="item.shortText"
             />
             <div class="d-flex mx-auto justify-center">
@@ -45,5 +45,8 @@ export default {
 <style lang="scss" scoped>
 img {
   max-width: 100%;
+}
+.font-bold{
+  font-weight: bold !important;
 }
 </style>

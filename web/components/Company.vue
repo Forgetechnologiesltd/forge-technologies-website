@@ -4,7 +4,7 @@
     tag="section"
     class="mt-14 container--wider"
   >
-    <h1 class="text-center text-h4 text-md-h3 mb-6">{{ heading }}</h1>
+    <h1 class="text-center text-h4 text-md-h3 mb-6 font-bold">{{ heading }}</h1>
     <v-row>
       <v-col
         v-for="item in items"

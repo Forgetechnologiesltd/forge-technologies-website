@@ -102,6 +102,7 @@ export default {
         },
         {
           hid: 'og:image',
+          name: 'og:image',
           property: 'og:image',
           content: this.page.openGraph.image
             ? this.$imageHelper(this.page.openGraph.image).url()

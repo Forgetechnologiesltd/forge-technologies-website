@@ -24,48 +24,7 @@ export default async (ctx) => {
     head: {
       titleTemplate: '%s | Forge Technologies',
       title: siteSettings.title,
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: '' },
-        { hid: 'robots', name: 'robots', content: 'index, follow' },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: siteSettings.openGraph.title
-            ? siteSettings.openGraph.title
-            : '',
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: siteSettings.openGraph.description
-            ? siteSettings.openGraph.description
-            : '',
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: siteSettings.openGraph.image
-            ? builder.image(siteSettings.openGraph.image).url()
-            : '',
-        },
-        {
-          hid: 'og:type',
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: process.env.URL,
-        },
-        {
-          hid: 'canonical',
-          rel: 'canonical',
-          href: process.env.URL,
-        },
-      ],
+     
       script:[
         {
           type:'text-javascript',
