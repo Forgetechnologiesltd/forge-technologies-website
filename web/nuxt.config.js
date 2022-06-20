@@ -16,7 +16,7 @@ export default async (ctx) => {
   const siteSettings = await sanityClient.fetch('*[_type == "siteSettings"][0]')
   const nuxtConfig = {
     // Target (https://go.nuxtjs.dev/config-target)
-    target: 'static',
+    target: 'server',
 
     ssr: false,
 
