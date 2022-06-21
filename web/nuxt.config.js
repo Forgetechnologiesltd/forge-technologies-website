@@ -96,6 +96,7 @@ export default async (ctx) => {
       '~/plugins/vuelidate.js',
       '~/plugins/stickyDirective.client.js',
       '~/plugins/gtag.js',
+      '~/plugins/vue-meta2.js',
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -158,7 +158,7 @@ export default {
     Wildcard,
   },
   data: () => ({ serializers, post: {} }),
-  head() {
+  metaInfo() {
      if (!this || !this.post) {
        return
      }

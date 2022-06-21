@@ -71,7 +71,7 @@ export default {
     this.page = result.page
   },
   data: () => ({ serializers, page: {} }),
-  head() {
+  metaInfo() {
     if (!this || !this.page || !this.page.openGraph) {
       return
     }
