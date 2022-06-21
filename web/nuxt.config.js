@@ -27,7 +27,7 @@ export default async (ctx) => {
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'robots', name: 'robots', content: 'index, follow' },
+        { vmid: 'robots', name: 'robots', content: 'index, follow' },
       ],
       script:[
         {

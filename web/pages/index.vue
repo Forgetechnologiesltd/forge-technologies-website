@@ -79,29 +79,29 @@ export default {
       title: this.page.openGraph.title,
       meta: [
         {
-          hid: 'description',
+          vmid: 'description',
           name: 'description',
           content: this.page.openGraph.description,
         },
         {
-          hid: 'keywords',
+          vmid: 'keywords',
           name: 'keywords',
           content: this.page.openGraph.keywords
             ? this.page.openGraph.keywords.join(',')
             : '',
         },
         {
-          hid: 'og:title',
+          vmid: 'og:title',
           property: 'og:title',
           content: this.page.openGraph.title,
         },
         {
-          hid: 'og:description',
+          vmid: 'og:description',
           property: 'og:description',
           content: this.page.openGraph.description,
         },
         {
-          hid: 'og:image',
+          vmid: 'og:image',
           name: 'og:image',
           property: 'og:image',
           content: this.page.openGraph.image
