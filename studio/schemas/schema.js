@@ -14,6 +14,7 @@ import page from "./documents/page";
 import siteSettings from "./documents/siteSettings";
 import route from "./documents/route";
 import footerMenu from "./documents/footerMenu";
+import collaboratorList from "./documents/collaboratorList";
 
 import experiment from "./objects/experiment";
 import simpleBlockContent from "./objects/simpleBlockContent";
@@ -25,6 +26,7 @@ import plugDefaultFields from "./plugs/_plugDefaultFields";
 import { instagram, videoEmbed } from "./objects/embeds";
 import cta from "./objects/cta";
 import menuItem from "./objects/menuItem";
+import collaboratorItem from "./objects/collaboratorItem";
 import bodyPortableText from "./objects/bodyPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
 import mainImage from "./objects/mainImage";
@@ -60,10 +62,12 @@ export default createSchema({
       simpleBlockContent,
       cta,
       menuItem,
+      collaboratorItem,
       submenuItem,
       everyman,
       tabbableContent,
       footerMenu,
+      collaboratorList,
       siteSettings,
       post,
       navMenu,

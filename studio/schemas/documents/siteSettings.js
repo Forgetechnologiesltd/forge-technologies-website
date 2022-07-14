@@ -45,5 +45,19 @@ export default {
         "These will be the default meta tags on all pages that have not set their own",
       type: "openGraph",
     },
+    {
+      title: "Accreditations",
+      name: "collaborators",
+      type: "array",
+      description: "Footer bottom accreditations logos",
+      of: [
+        {
+          name: "collaboratorsItem",
+          type: "reference",
+          title: "accreditation List",
+          to: [{ type: "collaboratorList" }],
+        },
+      ],
+    },
   ],
 };

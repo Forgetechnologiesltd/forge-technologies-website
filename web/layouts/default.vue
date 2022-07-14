@@ -184,6 +184,19 @@
                 </v-list>
               </v-col>
             </v-row>
+            <v-row  v-if="collaborators">
+              <div class="newfooterImages-text col-12">
+                <h4 class="mb-0 text-h5 text-md-h4 pl-0 block text-center-class">{{collaboratorText}}</h4>
+              </div>
+              <div class="newfooterImages col-12">
+                <img
+                  v-for="item in collaborators"
+                  :key="item._key"
+                  :src="$imageHelper(item.image).auto('format').url()"
+                  :alt="item.title"
+                >                
+              </div>
+            </v-row>
           </v-container>
         </v-card-title>
 
@@ -234,6 +247,14 @@ const siteSettingsQuery = groq`*[_type == "siteSettings"][0] {
       title,
       "slug": landingPageRoute->slug.current,
     }
+  },
+  "collaborators": collaborators[]-> {
+    _id,
+    title,
+    items[] {
+      title,
+      image,
+    }
   }
 }`
 
@@ -244,6 +265,8 @@ export default {
     this.items = items
     this.footerMenus = siteSettings.footerMenus
     this.footerText = siteSettings.footerText
+    this.collaborators = siteSettings.collaborators[0].items
+    this.collaboratorText = siteSettings.collaborators[0].title
   },
   data() {
     return {
@@ -254,6 +277,8 @@ export default {
       drawer: false,
       items: [],
       footerMenus: [],
+      collaborators: null,
+      collaboratorText:'',
       footerText: '',
     }
   },
@@ -351,4 +376,28 @@ export default {
 //     }
 //   }
 // }
+
+.newfooterImages{
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+.newfooterImages img{
+  margin:10px;
+}
+
+.text-center-class{
+  text-align: center;
+}
+
+@media screen and (max-width:768px){
+  .newfooterImages{
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .text-center-class{
+    text-align: left;
+  }
+}
 </style>
