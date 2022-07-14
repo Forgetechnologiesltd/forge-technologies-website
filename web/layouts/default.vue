@@ -185,7 +185,7 @@
               </v-col>
             </v-row>
             <v-row  v-if="collaborators">
-              <div class="newfooterImages-text col-12">
+              <div class="newfooterImages-text col-12" v-if="false">
                 <h4 class="mb-0 text-h5 text-md-h4 pl-0 block text-center-class">{{collaboratorText}}</h4>
               </div>
               <div class="newfooterImages col-12">
