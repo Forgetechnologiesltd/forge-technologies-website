@@ -385,6 +385,7 @@ export default {
 }
 .newfooterImages img{
   margin:10px;
+  max-width: 200px;
 }
 
 .text-center-class{
