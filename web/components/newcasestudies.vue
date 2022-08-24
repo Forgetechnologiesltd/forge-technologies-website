@@ -59,7 +59,7 @@ const serializers = {
 }
 
 export default {
-  name: 'newcasestudies',
+  name: 'newCaseStudies',
   props: {
     _key: String,
   },
