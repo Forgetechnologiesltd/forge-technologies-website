@@ -25,6 +25,7 @@ export default {
         { type: "innocent" },
         { type: "creator" },
         { type: "caregiver" },
+        { type: "bigquote" },
       ],
     },
   ],

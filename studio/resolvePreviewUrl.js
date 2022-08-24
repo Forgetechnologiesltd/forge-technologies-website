@@ -10,6 +10,8 @@ export default function resolvePreviewUrl(document) {
       return `${baseUrl}/${document.slug.current}`
     case 'post':
       return `${baseUrl}/blog/${document.slug.current}`
+    case 'casestudy':
+      return `${baseUrl}/blog/${document.slug.current}`
     case 'siteSettings':
       return baseUrl
     case 'page':

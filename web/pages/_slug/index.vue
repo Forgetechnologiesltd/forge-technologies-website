@@ -20,6 +20,8 @@ import Company from '~/components/Company'
 import Contact from '~/components/Contact'
 import Wildcard from '~/components/Wildcard'
 import Storyteller from '~/components/Storyteller'
+import newcasestudies from '~/components/newcasestudies'
+import bigquote from '~/components/Bigquote'
 
 const ctaQuery = `cta {
         title,
@@ -62,10 +64,12 @@ const serializers = {
     jester: Jester,
     innocent: Innocent,
     sage: Sage,
+    bigquote: bigquote,
     company: Company,
     contact: Contact,
     wildcard: Wildcard,
     storyteller: Storyteller,
+    newcasestudies: newcasestudies,
   },
 }
 

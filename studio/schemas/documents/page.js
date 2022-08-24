@@ -44,6 +44,8 @@ export default {
         { type: "contact" },
         { type: "wildcard" },
         { type: "storyteller" },
+        { type: "newcasestudies" },
+        { type: "bigquote" },
       ],
     },
     {

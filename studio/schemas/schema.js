@@ -10,6 +10,7 @@ import navMenu from "./documents/navMenu";
 import author from "./documents/author";
 import category from "./documents/category";
 import post from "./documents/post";
+import casestudy from "./documents/casestudy";
 import page from "./documents/page";
 import siteSettings from "./documents/siteSettings";
 import route from "./documents/route";
@@ -70,6 +71,7 @@ export default createSchema({
       collaboratorList,
       siteSettings,
       post,
+      casestudy,
       navMenu,
       page,
       category,

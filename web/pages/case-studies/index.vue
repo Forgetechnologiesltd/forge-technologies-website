@@ -1,7 +1,5 @@
 <template>
-  
   <SanityContent :blocks="page.content" :serializers="serializers" />
-
 </template>
 
 <script>
@@ -23,6 +21,7 @@ import Contact from '~/components/Contact'
 import Wildcard from '~/components/Wildcard'
 import Storyteller from '~/components/Storyteller'
 import newcasestudies from '~/components/newcasestudies'
+import Bigquote from '~/components/Bigquote'
 
 const ctaQuery = `cta {
         title,
@@ -68,17 +67,17 @@ const serializers = {
     wildcard: Wildcard,
     storyteller: Storyteller,
     newcasestudies: newcasestudies,
+    bigquote: Bigquote,
   },
 }
 
 export default {
   async fetch() {
     const result = await this.$sanity.fetch(query, {
-      slug: 'news-and-views',
+      slug: 'case-studies',
     })
     this.page = result.page
   },
   data: () => ({ serializers, page: {} }),
- 
 }
 </script>

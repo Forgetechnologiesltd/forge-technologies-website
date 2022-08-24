@@ -18,6 +18,9 @@ import Innocent from '~/components/Innocent'
 import Sage from '~/components/Sage'
 import Company from '~/components/Company'
 import Contact from '~/components/Contact'
+import Bigquote from '~/components/Bigquote'
+import newCaseStudies from '~/components/newCaseStudies'
+
 
 const ctaQuery = `cta {
         title,
@@ -61,6 +64,8 @@ const serializers = {
     sage: Sage,
     company: Company,
     contact: Contact,
+    bigquote: Bigquote,
+    newCaseStudies: newCaseStudies,
   },
 }
 

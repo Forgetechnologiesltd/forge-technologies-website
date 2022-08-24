@@ -21,9 +21,11 @@ export { default as ctaColumns } from "./ctaColumns";
 export { default as ctaPlug } from "./ctaPlug";
 export { default as company } from "./company";
 export { default as storyteller } from "./storyteller";
+export { default as newcasestudies } from "./newcasestudies";
 export { default as companyItem } from "./companyItem";
 export { default as contact } from "./contact";
 export { default as uiComponentRef } from "./uiComponent";
+export { default as bigquote } from "./bigquote";
 // export { default as pricing } from "./pricing";
 /*
 export { default as cta } from './cta'

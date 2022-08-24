@@ -217,6 +217,9 @@ export default async (ctx) => {
             ...res.blogPosts.map(
               (item) => `/news-and-views/${item.slug.current}`
             ),
+            ...res.casestudies.map(
+              (item) => `/case-studies/${item.slug.current}`
+            ),
           ]
         })
       },
