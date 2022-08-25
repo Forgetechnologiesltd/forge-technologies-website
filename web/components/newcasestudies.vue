@@ -1,6 +1,6 @@
 <template>
   <v-container
-    class="py-0 my-7 mt-16 container--wider"
+    class="py-0 my-7 mt-16"
     :id="`newcasestudies-${_key}`"
     tag="section"
   >

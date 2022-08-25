@@ -1,49 +1,55 @@
 <template>
 <!-- Begin Mailchimp Signup Form -->
 <div id="mc_embed_signup" class="blue">
-    <v-form @submit.prevent="submit" style="min-width: 100%" id="mc-embedded-subscribe-form">
+    <v-form @submit.prevent="submit" style="min-width: 100%" id="mc-embedded-subscribe-form"  >
         <div id="mc_embed_signup_scroll">
-        <h2 class="white--text">Subscribe</h2>
-        <div class="indicates-required white--text"><span class="asterisk">*</span> indicates required</div>
-<div class="mc-field-group white--text">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-</label>
-	<v-text-field
-        hide-details="auto"
-        color="white"
-        v-model="email"
-        :error-messages="emailErrors"
-        background-color="white"
-        name="EMAIL"
-        required
-        @input="$v.email.$touch()"
-        @blur="$v.email.$touch()"
-        id="mce-EMAIL"
-        class="required email"
-    ></v-text-field>
-    <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-</div>
-	<div id="mce-responses" class="clear foot">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1a373db10c36be6f7bf5a2316_2b568fed8a" tabindex="-1" value=""></div>
-        <div class="optionalParent">
-            <div class="clear foot">
-                
-                <v-btn
-                      class="ma-2 white"
-                      type="submit"
-                      outlined
-                      color="primary"
-                      id="mc-embedded-subscribe"
-                    >
-                      Subscribe and Download Pdf
-                    </v-btn>
+        <h2 class="white--text">{{this.showResult?"Subscribe":"Thanks for subscribe"}}</h2>
+        <div v-if="showResult">
+          <div class="indicates-required white--text"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group white--text">
+              <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+            </label>
+              <v-text-field
+                    hide-details="auto"
+                    color="white"
+                    v-model="email"
+                    :error-messages="emailErrors"
+                    background-color="white"
+                    name="EMAIL"
+                    required
+                    @input="$v.email.$touch()"
+                    @blur="$v.email.$touch()"
+                    id="mce-EMAIL"
+                    class="required email"
+                ></v-text-field>
+                <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
             </div>
-        </div>
-    </div>
+            <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1a373db10c36be6f7bf5a2316_2b568fed8a" tabindex="-1" value=""></div>
+            <div class="optionalParent">
+                <div class="clear foot">
+                    
+                    <v-btn
+                          class="ma-2 white"
+                          type="submit"
+                          outlined
+                          color="primary"
+                          id="mc-embedded-subscribe"
+                        >
+                        Subscribe and Download Pdf
+                      </v-btn>
+                </div>
+            </div>
+          </div>
+          <div v-else>
+            <p class="white--text">Subscribe Success! Redirect pdf</p>
+          </div>
+      </div>
 </v-form>
+
 </div>
 <!--End mc_embed_signup-->
 </template>
@@ -126,6 +132,7 @@ export default {
       isError: false,
       isValidationError: false,
       submitStatus: null,
+      showResult: true,
       success: this.successMessage
         ? this.successMessage
         : "Thanks for getting in touch. We'll get back to you as soon as possible",
@@ -166,11 +173,14 @@ export default {
         })
           .then((res) => {
             this.isSuccess = true
-            this.downloadFile();
+            this.showResult = !this.showResult;
+            setTimeout(() => {  window.open(this.downloadLink, '_blank'); }, 1000);
+            
           })
           .catch((error) => {
             this.isError = true
-            this.downloadFile();
+            this.showResult = !this.showResult;
+            setTimeout(() => {  window.open(this.downloadLink, '_blank'); }, 1000);
           })
       }
       
@@ -185,13 +195,13 @@ export default {
       this.submitStatus = null
     },
     async downloadFile() {
+      window.open(this.downloadLink, '_blank');
       const response = await fetch(this.downloadLink, {
         method: 'GET',
         responseType: "blob",
          headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
          
       });
-      console.log(response)
       const blob = new Blob([response.body], { type: "application/pdf" });
       const link = document.createElement("a");
       link.href = window.URL.createObjectURL(blob);

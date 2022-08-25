@@ -18,7 +18,7 @@
                   >
                   <span class="hero-bg-overlay"></span>
                     <span
-                      class="d-block mb-3 text-h6"
+                      class="d-block mb-3 text-h6 font-weight-black"
                     >
                       CASE STUDY
                     </span>
@@ -27,9 +27,8 @@
                     >
                       {{ post.title }}
                     </h1>
-                    <a class="mt-16 white--text" @click="downloadPdf"> <v-icon>
-                      tray-download
-                    </v-icon>
+                    <a class="mt-16 white--text font-weight-black d-flex flex-row text-left align-center" @click="downloadPdf">
+                    <img src="https://cdn.sanity.io/images/pyzze960/production/e18be93627f01f3db679d21caaf98a98776887e6-57x58.png" width="28" class="mr-2" />
                       DOWNLOAD PDF
                     </a>
                   </v-col>
@@ -48,11 +47,11 @@
         </v-col>
         <v-col cols="12" lg="3">
           <div v-if="post.industry">
-          <h3 class="black--text">Industry</h3>
+          <h3 class="black--text mb-0">Industry</h3>
            <span>{{post.industry}}</span>
           </div>
           <div v-if="post.services">
-          <h3>Services</h3>
+          <h3 class="mt-8 mb-0">Services</h3>
            <SanityContent
             class="black--text custom-mb0"
             :blocks="post.services"
