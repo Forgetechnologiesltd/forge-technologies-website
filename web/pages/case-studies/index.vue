@@ -87,4 +87,9 @@ export default {
         color: #039be5 !important;
     caret-color: #039be5 !important;
   }
+  .v-application .primary{
+    background-color: #039be5 !important;
+    border-color: #039be5 !important;
+  }
+  
 </style>
