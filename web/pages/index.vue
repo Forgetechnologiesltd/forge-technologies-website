@@ -65,7 +65,7 @@ const serializers = {
     company: Company,
     contact: Contact,
     bigquote: Bigquote,
-    newCaseStudies: newCaseStudies,
+    newcasestudies: newCaseStudies,
   },
 }
 
