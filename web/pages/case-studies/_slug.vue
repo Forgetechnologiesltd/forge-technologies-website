@@ -75,26 +75,26 @@
       tag="section"
       class="mt-14 white--text py-8 py-md-16"
       >
-      <h2 class="text-center text-h3 text-md-h1 mb-6 font-bold pb-16">Highlights</h2>
+      <h2 class="text-center text-h3 text-xl-h1 mb-6 font-bold pb-16">Highlights</h2>
       <v-row>
         <v-col
         cols="12"
         md="4"
-        class="text-h5 text-md-h3 px-10 text-center"
+        class="text-h5 text-xl-h3 px-10 text-center"
         >
         {{post.highlight1}} 
         </v-col>
         <v-col
         cols="12"
         md="4"
-         class="text-h5 text-md-h3 px-10 text-center"
+         class="text-h5 text-xl-h3 px-10 text-center"
         >
         {{post.highlight2}} 
         </v-col>
         <v-col
         cols="12"
         md="4"
-         class="text-h5 text-md-h3 px-10 text-center"
+         class="text-h5 text-xl-h3 px-10 text-center"
         >
         {{post.highlight3}} 
         </v-col>
@@ -123,10 +123,10 @@
     
       <v-container class="mt-10 py-16">
         <v-row :z-index="2" class="new-zindex pb-16">
-          <v-col cols="1" lg="1">
+          <v-col cols="1" lg="2" xl="1">
             <span class="quote-start blue--text">“</span>
           </v-col>
-          <v-col cols="11" md="10" lg="7">
+          <v-col cols="11" lg="9" xl="7">
             <SanityContent
               class="black--text mb-6 mt-4 mt-lg-14 text-h4"
               :blocks="post.detailQuote"
@@ -154,6 +154,7 @@
     >
       <Subscribe :download-link="post.pdfLinkOrId"></Subscribe>
     </v-dialog>
+    <Contact :heading="this.headertext" :text="this.contactText"></Contact>
   </v-container>
 </template>
 
@@ -166,6 +167,7 @@ import Wildcard from '~/components/Wildcard'
 import MainImage from '~/components/MainImage'
 import Subscribe from '~/components/Subscribe'
 import VueFilterDateFormat from '@vuejs-community/vue-filter-date-format'
+import Contact from '~/components/Contact'
 Vue.use(VueFilterDateFormat)
 
 const query = groq`*[_type == "casestudy" && slug.current == $slug][0]{
@@ -203,13 +205,20 @@ export default {
     ReadingTime,
     OtherCaseStudies,
     Wildcard,
-  },
+    Subscribe,
+    Contact,
+    Contact
+},
   methods:{
     downloadPdf(){
       this.dialog = true;
     },
   },
-  data: () => ({ serializers, post: {} , dialog: false}),
+  data: () => ({ serializers, post: {},
+  dialog: false,
+  headertext : "Would you like to find out more?",
+  contactText: [ { "_key": "f445953223ab", "_type": "block", "children": [ { "_key": "b6db124afdff", "_type": "span", "marks": [], "text": "Whether you are considering a particular technology, looking for general advice or would like to find out more about how we approach any of the areas we have detailed on our site, then please get in contact." } ], "markDefs": [], "style": "normal" } ],
+  }),
   metaInfo() {
      if (!this || !this.post) {
        return

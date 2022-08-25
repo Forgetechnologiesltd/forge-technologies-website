@@ -81,3 +81,10 @@ export default {
   data: () => ({ serializers, page: {} }),
 }
 </script>
+
+<style>
+  .v-application .primary--text{
+        color: #039be5 !important;
+    caret-color: #039be5 !important;
+  }
+</style>

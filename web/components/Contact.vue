@@ -1,6 +1,6 @@
 <template>
   <v-container
-    class="blue-grey darken-3 my-10 my-md-16 py-n8 contact-form"
+  class="blue-grey darken-3 my-10 my-md-16 py-n8 contact-form"
     :id="`contact-${_key}`"
     tag="section"
     fluid

@@ -1,11 +1,12 @@
 <template>
-  <div style="position:relative; overflow:hidden;">
-      <v-container class="mt-10 pt-16 blue">
+  <div style="position:relative; overflow:hidden;" class="py-2">
+      <v-container class="mt-10 pt-16 ">
+        <div class="blue py-6">
         <v-row :z-index="2" class="new-zindex ">
-          <v-col cols="1" lg="1">
+          <v-col cols="1" md="2" lg="2" xl="1">
             <span class="quote-start white--text">“</span>
           </v-col>
-          <v-col cols="11" md="12" lg="8">
+          <v-col cols="11" md="10" lg="9" xl="8" class="last-col">
             <SanityContent
               class="black--text mb-12 mt-8 mt-lg-14 text-h4 white--text"
               :blocks="this.quoteText"
@@ -13,6 +14,7 @@
             <span class="white--text">-{{this.quoteName}}, {{this.quoteTitle}},<b> {{this.quoteCompany}}</b></span>
           </v-col>
         </v-row>
+        </div>
       </v-container>
     </div>
 </template>
@@ -43,4 +45,9 @@ img {
     font-size:100px;
   }
 }
+.custom-width-for-xx{
+  width: calc(100%-20px);
+  margin-left: 10px;
+}
+
 </style>
