@@ -19,7 +19,7 @@ import Sage from '~/components/Sage'
 import Company from '~/components/Company'
 import Contact from '~/components/Contact'
 import Bigquote from '~/components/Bigquote'
-import newCaseStudies from '~/components/newCaseStudies'
+import newCaseStudies from '~/components/newcasestudies'
 
 
 const ctaQuery = `cta {
