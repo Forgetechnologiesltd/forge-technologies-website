@@ -23,7 +23,7 @@
                       CASE STUDY
                     </span>
                     <h1
-                      class="font-weight-light mb-4 mb-md-16 text-h4 text-md-h1"
+                      class="font-weight-light mb-4 mb-md-16 text-h4 text-md-h2"
                     >
                       {{ post.title }}
                     </h1>
