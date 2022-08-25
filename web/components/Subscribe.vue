@@ -1,7 +1,7 @@
 <template>
 <!-- Begin Mailchimp Signup Form -->
 <div id="mc_embed_signup" class="blue">
-    <v-form @submit.prevent="submit" style="min-width: 100%" id="mc-embedded-subscribe-form"  >
+    <v-form @submit.prevent="run" style="min-width: 100%" id="mc-embedded-subscribe-form"  >
         <div id="mc_embed_signup_scroll">
         <h2 class="white--text">{{this.showResult?"Subscribe":"Thanks for subscribe"}}</h2>
         <div v-if="showResult">
@@ -121,9 +121,13 @@ import {
   required,
   email,
 } from 'vuelidate/lib/validators'
+import mailchimp from '@mailchimp/mailchimp_marketing'
 export default {
     props: {
         downloadLink: String,
+    },
+    components:{
+      mailchimp,
     },
   data() {
     return {
@@ -133,6 +137,7 @@ export default {
       isValidationError: false,
       submitStatus: null,
       showResult: true,
+      mcData:{},
       success: this.successMessage
         ? this.successMessage
         : "Thanks for getting in touch. We'll get back to you as soon as possible",
@@ -154,6 +159,26 @@ export default {
     },
   },
   methods: {
+    async run() {
+      mailchimp.setConfig({
+        apiKey: '03d2fc06b8337f8e5071b6bc3017423c-us9',
+        server: 'us9',
+    });
+      const mcData = {
+        members : [
+          {
+            email_address : this.email,
+            status : 'pending',
+          }
+        ]
+      }
+      const response = await mailchimp.lists.addListMember('2b568fed8a', {
+        email_address: this.email,
+        status: "subscribed",
+      });
+      
+      console.log(response);
+    },
     async submit() {
     this.$v.$touch()
     if (this.$v.$invalid) {
@@ -161,14 +186,16 @@ export default {
         this.isValidationError = true
       }else{
          this.isValidationError = false
-         await fetch('https://forge-technologies.us14.list-manage.com/subscribe/post?u=1b529cf2627b9d07d115c7608&amp;id=3454c589a8&amp;f_id=00ea66e3f0', {
-          method: 'POST',
+         await fetch('https://adeptive.us9.list-manage.com/subscribe/post-json?u=1a373db10c36be6f7bf5a2316&amp;id=2b568fed8a&amp;f_id=00d20be1f0', {
+          method: 'GET',
           headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
+            'Authorization': 'Basic 03d2fc06b8337f8e5071b6bc3017423c-us9',
+            'Content-Type': 'application/json; charset=utf-8',
           },
+          dataType    : 'json',
           body: JSON.stringify({
-            EMAIL: this.email,
+                email_address : this.email,
+                status : 'subscribed',
           }),
         })
           .then((res) => {
@@ -179,8 +206,6 @@ export default {
           })
           .catch((error) => {
             this.isError = true
-            this.showResult = !this.showResult;
-            setTimeout(() => {  window.open(this.downloadLink, '_blank'); }, 1000);
           })
       }
       
