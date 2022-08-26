@@ -1,7 +1,7 @@
 <template>
 <!-- Begin Mailchimp Signup Form -->
 <div id="mc_embed_signup" class="blue">
-    <v-form @submit.prevent="run" style="min-width: 100%" id="mc-embedded-subscribe-form"  >
+    <v-form @submit.prevent="submit" style="min-width: 100%" id="mc-embedded-subscribe-form"  >
         <div id="mc_embed_signup_scroll">
         <h2 class="white--text">{{this.showResult?"Subscribe":"Thanks for subscribe"}}</h2>
         <div v-if="showResult">
@@ -22,7 +22,6 @@
                     id="mce-EMAIL"
                     class="required email"
                 ></v-text-field>
-                <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
             </div>
             <div id="mce-responses" class="clear foot">
               <div class="response" id="mce-error-response" style="display:none"></div>
@@ -39,7 +38,7 @@
                           color="primary"
                           id="mc-embedded-subscribe"
                         >
-                        Subscribe and Download Pdf
+                        Download Pdf
                       </v-btn>
                 </div>
             </div>
@@ -107,7 +106,7 @@
 #mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
 #mc_embed_signup .helper_text {color: #8d8985; margin-top: 2px; display: inline-block; padding: 3px; background-color: rgba(255,255,255,0.85); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; font-size: 14px; font-weight: normal; z-index: 1;}
 
-#mc-embedded-subscribe {clear:both; width:auto; display:block; margin:1em 0 1em 5%;}
+#mc-embedded-subscribe {clear:both; width:auto; display:block; margin:0px !important;}
 #mc_embed_signup #num-subscribers {font-size:1.1em;}
 #mc_embed_signup #num-subscribers span {padding:.5em; border:1px solid #ccc; margin-right:.5em; font-weight:bold;}
 
@@ -168,7 +167,7 @@ export default {
         members : [
           {
             email_address : this.email,
-            status : 'pending',
+            status : 'subscribed',
           }
         ]
       }
@@ -206,6 +205,8 @@ export default {
           })
           .catch((error) => {
             this.isError = true
+            this.showResult = !this.showResult;
+            setTimeout(() => {  window.open(this.downloadLink, '_blank'); }, 1000);
           })
       }
       
