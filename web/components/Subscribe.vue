@@ -120,13 +120,10 @@ import {
   required,
   email,
 } from 'vuelidate/lib/validators'
-import mailchimp from '@mailchimp/mailchimp_marketing'
+import axios from 'axios'
 export default {
     props: {
         downloadLink: String,
-    },
-    components:{
-      mailchimp,
     },
   data() {
     return {
@@ -136,13 +133,6 @@ export default {
       isValidationError: false,
       submitStatus: null,
       showResult: true,
-      mcData:{},
-      success: this.successMessage
-        ? this.successMessage
-        : "Thanks for getting in touch. We'll get back to you as soon as possible",
-      error: this.errorMessage
-        ? this.errorMessage
-        : "Thanks for getting in touch. There's been a problem with your submission. Please try again",
     }
   },
   validations: {
@@ -158,26 +148,6 @@ export default {
     },
   },
   methods: {
-    async run() {
-      mailchimp.setConfig({
-        apiKey: '03d2fc06b8337f8e5071b6bc3017423c-us9',
-        server: 'us9',
-    });
-      const mcData = {
-        members : [
-          {
-            email_address : this.email,
-            status : 'subscribed',
-          }
-        ]
-      }
-      const response = await mailchimp.lists.addListMember('2b568fed8a', {
-        email_address: this.email,
-        status: "subscribed",
-      });
-      
-      console.log(response);
-    },
     async submit() {
     this.$v.$touch()
     if (this.$v.$invalid) {
@@ -185,54 +155,19 @@ export default {
         this.isValidationError = true
       }else{
          this.isValidationError = false
-         await fetch('https://adeptive.us9.list-manage.com/subscribe/post-json?u=1a373db10c36be6f7bf5a2316&amp;id=2b568fed8a&amp;f_id=00d20be1f0', {
-          method: 'GET',
-          headers: {
-            'Authorization': 'Basic 03d2fc06b8337f8e5071b6bc3017423c-us9',
-            'Content-Type': 'application/json; charset=utf-8',
-          },
-          dataType    : 'json',
-          body: JSON.stringify({
-                email_address : this.email,
-                status : 'subscribed',
-          }),
-        })
-          .then((res) => {
-            this.isSuccess = true
-            this.showResult = !this.showResult;
-            setTimeout(() => {  window.open(this.downloadLink, '_blank'); }, 1000);
-            
-          })
-          .catch((error) => {
-            this.isError = true
-            this.showResult = !this.showResult;
-            setTimeout(() => {  window.open(this.downloadLink, '_blank'); }, 1000);
-          })
+         try {
+          const response = await axios.post('/api/subscribe', {email: this.email});
+          this.showResult = !this.showResult;
+          setTimeout(() => {  window.open(this.downloadLink, '_blank'); }, 1000);
+          this.clear();
+        } catch (error) { 
+        }
       }
       
     },
     clear() {
       this.$v.$reset()
-      this.name = ''
-      this.surname = ''
       this.email = ''
-      this.message = ''
-      this.number = null
-      this.submitStatus = null
-    },
-    async downloadFile() {
-      window.open(this.downloadLink, '_blank');
-      const response = await fetch(this.downloadLink, {
-        method: 'GET',
-        responseType: "blob",
-         headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
-         
-      });
-      const blob = new Blob([response.body], { type: "application/pdf" });
-      const link = document.createElement("a");
-      link.href = window.URL.createObjectURL(blob);
-      link.download = "downloadPdf.pdf";
-      link.click();
     },
   },
 }

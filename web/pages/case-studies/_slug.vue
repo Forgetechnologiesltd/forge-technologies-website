@@ -156,6 +156,7 @@
     </v-dialog>
     <Contact :heading="this.headertext" :text="this.contactText"></Contact>
   </v-container>
+  
 </template>
 
 <script>
@@ -168,6 +169,7 @@ import MainImage from '~/components/MainImage'
 import Subscribe from '~/components/Subscribe'
 import VueFilterDateFormat from '@vuejs-community/vue-filter-date-format'
 import Contact from '~/components/Contact'
+
 Vue.use(VueFilterDateFormat)
 
 const query = groq`*[_type == "casestudy" && slug.current == $slug][0]{
@@ -207,7 +209,6 @@ export default {
     Wildcard,
     Subscribe,
     Contact,
-    Contact
 },
   methods:{
     downloadPdf(){
