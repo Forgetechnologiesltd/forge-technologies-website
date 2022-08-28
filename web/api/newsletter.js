@@ -26,6 +26,8 @@ app.post('/subscribe', async(req, res) => {
   }
 })
 
+module.exports = app
+
 export default {
   path: '/api',
   handler: app
