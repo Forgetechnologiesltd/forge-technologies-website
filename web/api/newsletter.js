@@ -9,6 +9,8 @@ const app = express();
 app.use(express.json());
 
 app.post('/subscribe', async(req, res) => {
+  debugger;
+  console.log(req);
   const { email: email_address } = req.body
 
   try {
@@ -29,8 +31,6 @@ app.post('/subscribe', async(req, res) => {
     res.status(error.status).send(error)
   }
 })
-
-module.exports = app
 
 export default {
   path: '/api',

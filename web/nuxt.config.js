@@ -249,9 +249,6 @@ export default async (ctx) => {
         }
       },
     },
-    serverMiddleware: [
-      { path: "/api", handler: "~/api/newsletter.js" },
-    ]
   }
 
   return nuxtConfig
