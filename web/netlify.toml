@@ -1,15 +1,18 @@
+[build]
+functions = 'functions'
+
 [[redirects]]
   from = "/*"
   to = "/"
   status = 200
 
+[[redirects]]
+  from = "/api/*"
+  to = "/.netfliy/functions/:splat"
+  status = 200
 
 [[edge_functions]]
 function = "hello"
 path = "/test"
 
 
-[build]
-command = 'npm run build'
-function = 'function'
-pusblish = 'build'
