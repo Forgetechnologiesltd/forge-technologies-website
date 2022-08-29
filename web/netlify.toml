@@ -1,5 +1,7 @@
 [build]
-directory = 'functions'
+directory = './functions/'
+functions = './functions/'
+
 
 [[redirects]]
   from = "/*"
