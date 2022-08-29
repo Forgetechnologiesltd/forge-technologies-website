@@ -18,7 +18,11 @@ app.post('/subscribe', async(req, res) => {
       body: {
         email_address,
         status: "subscribed"
-      }
+      },
+      headers: {
+      'Content-Type': 'application/json',
+      Authorization: `api_key ${API_KEY}`
+    }
     })
     res.status(response.statusCode).json(response.status);
   } catch(error) {
