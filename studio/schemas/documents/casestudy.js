@@ -65,17 +65,17 @@ export default {
     },
     {
       name: "highlight1",
-      type: "string",
+      type: "bodyPortableText",
       title: "Highlight List 1 (left)",
     },
     {
       name: "highlight2",
-      type: "string",
+      type: "bodyPortableText",
       title: "Highlight List 2 (center)",
     },
     {
       name: "highlight3",
-      type: "string",
+      type: "bodyPortableText",
       title: "Highlight List 3 (right)",
     },
     {

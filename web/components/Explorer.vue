@@ -1,6 +1,6 @@
 <template>
   <v-container :id="`explorer-${_key}`" tag="section" fluid class="px-0 pt-0">
-    <v-carousel cycle hide-delimiter-background>
+    <v-carousel cycle hide-delimiter-background height="60vh">
       <v-carousel-item
         v-for="item in explorerItems"
         :key="item._key"

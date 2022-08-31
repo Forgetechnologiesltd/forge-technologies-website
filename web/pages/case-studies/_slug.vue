@@ -43,15 +43,15 @@
     <v-container class="mt-10">
       <v-row>
         <v-col cols="12" lg="10" class="mb-4 mb-lg-14">
-          <span class="blue--text text-h6 text-md-h2 font-weight-normal">{{post.detailTopTitle}}</span>
+          <span class="blue--text text-h6 text-md-h3 font-weight-bold">{{post.detailTopTitle}}</span>
         </v-col>
         <v-col cols="12" lg="3">
           <div v-if="post.industry">
-          <h3 class="black--text mb-0">Industry</h3>
+          <h3 class="black--text mb-0 font-weight-bold">Industry</h3>
            <span>{{post.industry}}</span>
           </div>
           <div v-if="post.services">
-          <h3 class="mt-8 mb-0">Services</h3>
+          <h3 class="black--text mt-8 mb-0 font-weight-bold">Services</h3>
            <SanityContent
             class="black--text custom-mb0"
             :blocks="post.services"
@@ -73,7 +73,7 @@
     <div class="blue py-16">
       <v-container
       tag="section"
-      class="mt-14 white--text py-8 py-md-16"
+      class="white--text py-8 py-md-16"
       >
       <h2 class="text-center text-h3 text-xl-h1 mb-6 font-bold pb-16">Highlights</h2>
       <v-row>
@@ -82,21 +82,30 @@
         md="4"
         class="text-h5 text-xl-h3 px-10 text-center"
         >
-        {{post.highlight1}} 
+        <SanityContent
+            :blocks="post.highlight1"
+            :serializers="serializers"
+          />
         </v-col>
         <v-col
         cols="12"
         md="4"
          class="text-h5 text-xl-h3 px-10 text-center"
         >
-        {{post.highlight2}} 
+        <SanityContent
+            :blocks="post.highlight2"
+            :serializers="serializers"
+          /> 
         </v-col>
         <v-col
         cols="12"
         md="4"
          class="text-h5 text-xl-h3 px-10 text-center"
         >
-        {{post.highlight3}} 
+        <SanityContent
+            :blocks="post.highlight3"
+            :serializers="serializers"
+          /> 
         </v-col>
       </v-row>
         
@@ -123,10 +132,10 @@
     
       <v-container class="mt-10 py-16">
         <v-row :z-index="2" class="new-zindex pb-16">
-          <v-col cols="1" lg="2" xl="1">
+          <v-col cols="1" lg="2" xl="1" class="d-none d-sm-flex justify-end">
             <span class="quote-start blue--text">“</span>
           </v-col>
-          <v-col cols="11" lg="9" xl="7">
+          <v-col cols="12" lg="9" xl="7">
             <SanityContent
               class="black--text mb-6 mt-4 mt-lg-14 text-h4"
               :blocks="post.detailQuote"
@@ -150,7 +159,7 @@
     <other-case-studies></other-case-studies>
     <v-dialog
       v-model="dialog"
-      width="500"
+      width="667"
     >
       <Subscribe :download-link="post.pdfLinkOrId"></Subscribe>
     </v-dialog>
@@ -336,7 +345,7 @@ ol {
 
 .quote-start{
   font-size:300px;
-  margin-top:-30px;
+  line-height: 358px;
   @media screen and (max-width:728px){
     font-size:100px;
   }
