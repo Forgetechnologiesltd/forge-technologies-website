@@ -6,7 +6,7 @@
         <h2 class="white--text sb-top-text">{{this.showResult?"Download case study":"Success!"}}</h2>
         <p class="white--text sb-bottom-text">{{this.showResult?"Fill out your email address to download your copy.":"You can now view the case study as a PDF."}}</p>
         <div v-if="showResult">
-            <div class="mc-field-group white--text mr-0 justify-center">
+            <div class="mc-field-group white--text mr-0 justify-center d-flex items-center" style="justify-content: space-between; display: flex; align-items: center;align-content: space-around;flex-direction: column;flex-wrap: wrap;">
               <v-text-field
                     label="Email Address"
                     hide-details="auto"
