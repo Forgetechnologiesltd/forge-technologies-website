@@ -114,12 +114,12 @@
 
      <v-container class="mt-10">
       <v-row>
-        <v-col cols="12" lg="3">
+        <v-col cols="12" lg="2">
         </v-col>
-        <v-col cols="12" md="10" lg="5">
+        <v-col cols="12" md="10" lg="8">
           <span class="blue--text text-h6 text-md-h2 font-weight-normal">{{post.detailBottomTitle}}</span>
           <SanityContent
-            class="black--text mb-16 mt-4 mt-lg-14"
+            class="black--text mb-16 mt-4 mt-lg-14 new-h2-design"
             :blocks="post.detailBottomBody"
             :serializers="serializers"
           />
@@ -130,7 +130,7 @@
 
     <div style="position:relative; overflow:hidden;">
     
-      <v-container class="mt-10 py-16">
+      <v-container class="mt-10 pt-16 new-pb-16">
         <v-row :z-index="2" class="new-zindex pb-16">
           <v-col cols="1" lg="2" xl="1" class="d-none d-sm-flex justify-end">
             <span class="quote-start blue--text">“</span>
@@ -144,7 +144,7 @@
 
             <span class="">-{{post.detailQuoteName}}, {{post.detailQuoteTitle}},<b> {{post.detailQuoteCompany}}</b></span>
             
-            <div class="companyLogoImg mt-4">
+            <div class="companyLogoImg mt-8">
               <v-img :src="$imageHelper(post.detailQuoteCompanyLogo).auto('format').url()"></v-img>
             </div>
             
@@ -324,9 +324,9 @@ ol {
 .bgnew {
     content: "";
     position: absolute;
-    width: 110%;
-    height: 84%;
-    top: 8%;
+    width: 140%;
+    height: 82%;
+    top: 11%;
     left: -5%;
     z-index: 0;
     background: #f1f2f2;
@@ -348,6 +348,14 @@ ol {
   line-height: 358px;
   @media screen and (max-width:728px){
     font-size:100px;
+  }
+}
+.new-h2-design h2{
+  margin-top: 40px;
+}
+.new-pb-16{
+  @media screen and (min-width:728px){
+    padding-bottom: 150px !important;
   }
 }
 </style>

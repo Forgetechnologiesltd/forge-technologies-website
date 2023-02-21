@@ -67,7 +67,7 @@ border-radius: 0px !important;
 }
 .companyLogoImg{
   width:260px;
-  height: 120px;
+  //height: 120px;
   border-radius:10px;
   background:#FFF;
   padding:20px;
