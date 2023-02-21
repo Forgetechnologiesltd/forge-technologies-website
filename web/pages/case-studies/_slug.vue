@@ -17,11 +17,6 @@
                     md="8"
                   >
                   <span class="hero-bg-overlay"></span>
-                    <span
-                      class="d-block mb-3 text-h6 font-weight-black"
-                    >
-                      CASE STUDY
-                    </span>
                     <h1
                       class="font-weight-light mt-4 mb-4 mb-md-16 text-h4 text-md-h2"
                     >
