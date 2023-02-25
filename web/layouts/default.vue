@@ -18,7 +18,7 @@
       <v-container>
         <v-row class="pt-0 pt-md-3">
           <v-col cols="12" md="2" class="pt-0 pt-md-3">
-            <v-avatar class="mr-3 ml-3" width="200" tile>
+            <v-avatar class="mr-3 ml-lg-3 ml-md-0" width="200" tile>
               <NuxtLink to="/"
                 ><v-img
                   :src="
@@ -401,5 +401,18 @@ export default {
   .text-center-class{
     text-align: left;
   }
+}
+.v-tab:last-child{
+  padding-right:0px;
+}
+@media screen and (max-width:1268px) and (min-width:960px){
+  .v-avatar{
+    margin-left:0px !important;
+  }
+  .v-tab{
+    font-size: 12px;
+    padding:0 10px;
+  }
+  
 }
 </style>
