@@ -111,6 +111,7 @@ export default async (ctx) => {
       '@nuxtjs/fontawesome',
       '@nuxtjs/robots',
       '@nuxtjs/sitemap',
+      '@nuxtjs/gtm',
     ],
     fontawesome: {
       component: 'fa',
