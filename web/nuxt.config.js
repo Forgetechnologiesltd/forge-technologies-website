@@ -172,8 +172,12 @@ export default async (ctx) => {
             ],
           },
         },
+        '@nuxtjs/gtm',
       ],
     ],
+    gtm: {
+      id: 'GTM-PFX3BHV'
+    },
 
     // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
     vuetify: {

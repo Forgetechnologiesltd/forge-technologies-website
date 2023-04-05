@@ -11,12 +11,12 @@
     "generate": "nuxt generate",
     "lambda-build": "netlify-lambda build netlify/functions/test-mail",
     "lambda-start": "netlify-lambda serve netlify/functions/test-mail"
-
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@mailchimp/mailchimp_marketing": "^3.0.78",
     "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/gtm": "^2.4.0",
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sanity": "0.10.0",
     "@nuxtjs/sitemap": "^2.4.0",
