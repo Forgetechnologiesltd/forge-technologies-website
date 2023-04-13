@@ -174,6 +174,9 @@ export default async (ctx) => {
           },
         },
         '@nuxtjs/gtm',
+        ['nuxt-linkedin-insight-tag', { 
+          linkedin_id: '4834234', 
+        }],
       ],
     ],
     gtm: {
