@@ -112,6 +112,7 @@ export default async (ctx) => {
       '@nuxtjs/robots',
       '@nuxtjs/sitemap',
       '@nuxtjs/gtm',
+      'nuxt-linkedin-insight-tag',
     ],
     fontawesome: {
       component: 'fa',
