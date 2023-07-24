@@ -42,6 +42,7 @@ import submenuItem from "./objects/submenuItem";
 import everyman from "./objects/everyman";
 import wildcard from "./objects/wildcard";
 import tabbableContent from "./objects/tabbableContent";
+import youtube from "./objects/youtube"
 
 const allPlugs = Object.values(plugs).map((plug) => {
   return { ...plug, fields: plugDefaultFields.concat(plug.fields) };
@@ -84,6 +85,7 @@ export default createSchema({
       bodyPortableText,
       excerptPortableText,
       wildcard,
+      youtube,
     ])
     .concat(allPlugs),
 });
