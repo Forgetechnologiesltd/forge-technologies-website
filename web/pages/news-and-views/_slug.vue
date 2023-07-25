@@ -90,7 +90,7 @@
             :blocks="post.body"
             :serializers="serializers"
           />
-
+          
           <v-container v-if="post.author">
             <v-row>
               <v-col cols="12" md="10">
@@ -133,6 +133,10 @@ import OtherPosts from '~/components/OtherPosts'
 import Wildcard from '~/components/Wildcard'
 import MainImage from '~/components/MainImage'
 import VueFilterDateFormat from '@vuejs-community/vue-filter-date-format'
+import Youtube from '~/components/Youtube'
+import VueYoutube from 'vue-youtube'
+
+Vue.use(VueYoutube)
 Vue.use(VueFilterDateFormat)
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
@@ -143,7 +147,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "author": authors[0].author->,
   body
 }`
-const serializers = { types: { mainImage: MainImage } }
+const serializers = { types: { mainImage: MainImage, youtube: Youtube  } }
 export default {
   async fetch() {
     const result = await this.$sanity.fetch(query, {
@@ -156,6 +160,7 @@ export default {
     ReadingTime,
     OtherPosts,
     Wildcard,
+    Youtube,
   },
   data: () => ({ serializers, post: {} }),
   metaInfo() {
